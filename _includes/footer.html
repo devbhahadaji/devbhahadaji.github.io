@@ -1,0 +1,46 @@
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.name }}. All rights reserved.</p>
+      <div class="footer-links">
+        {% for social in site.social %}
+        <a href="{{ social.url }}" target="_blank" class="footer-link" aria-label="{{ social.name }}">
+          <i class="{{ social.icon }}"></i>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.name }}",
+  "url": "{{ site.url }}{{ site.baseurl }}",
+  "sameAs": [
+    {% for social in site.social %}
+    "{{ social.url }}"{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "jobTitle": "{{ site.title }}",
+  "description": "{{ site.description }}",
+  "image": "{{ site.profile_image | absolute_url }}"
+}
+</script>
+
+{% if site.features.particle_background %}
+<!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+{% endif %}

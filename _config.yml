@@ -1,0 +1,277 @@
+# ===================================================================
+# PORTFOLIO CONFIGURATION
+# This file controls all dynamic content on your portfolio website
+# ===================================================================
+
+# Site Settings
+title: "Fullstack Web Developer & Software Engineer"
+name: "Shubham Bhahada"
+description: "Passionate fullstack developer creating innovative web solutions with modern technologies and best practices."
+url: "https://shubhambhahada.github.io"
+baseurl: "/portfolio"
+lang: "en"
+
+# Personal Information
+email: "your.email@example.com"
+profile_image: "/assets/images/profile.jpg"
+
+# SEO and Analytics
+google_analytics: "" # Add your Google Analytics ID here
+author: "Shubham Bhahada"
+keywords: "fullstack developer, web developer, software engineer, React, Node.js, Python, JavaScript"
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+timezone: Asia/Kolkata
+
+# Jekyll Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-minifier
+  - jekyll-target-blank
+
+# Sass Configuration
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+  - .gitignore
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+# ===================================================================
+# PORTFOLIO CONTENT - EDIT BELOW TO CUSTOMIZE YOUR PORTFOLIO
+# ===================================================================
+
+# About Section
+about:
+  intro: "I'm a passionate fullstack web developer with expertise in modern web technologies and a love for creating innovative digital solutions."
+  details: "With experience in both frontend and backend development, I enjoy building scalable applications that provide exceptional user experiences. I'm constantly learning new technologies and best practices to stay current in this ever-evolving field."
+
+# Skills Section
+skills:
+  - category: "Frontend"
+    items:
+      - "React.js"
+      - "Vue.js"
+      - "TypeScript"
+      - "JavaScript (ES6+)"
+      - "HTML5 & CSS3"
+      - "Sass/SCSS"
+      - "Tailwind CSS"
+      - "Bootstrap"
+      - "Webpack"
+      - "Vite"
+
+  - category: "Backend"
+    items:
+      - "Node.js"
+      - "Express.js"
+      - "Python"
+      - "Django"
+      - "Flask"
+      - "PHP"
+      - "Laravel"
+      - "REST APIs"
+      - "GraphQL"
+      - "Socket.io"
+
+  - category: "Database"
+    items:
+      - "MongoDB"
+      - "PostgreSQL"
+      - "MySQL"
+      - "Redis"
+      - "Firebase"
+      - "Supabase"
+
+  - category: "DevOps & Tools"
+    items:
+      - "Git & GitHub"
+      - "Docker"
+      - "AWS"
+      - "Vercel"
+      - "Netlify"
+      - "GitHub Actions"
+      - "Jest"
+      - "Cypress"
+      - "Postman"
+      - "VS Code"
+
+# Projects Section
+projects:
+  - title: "E-Commerce Platform"
+    description: "Full-stack e-commerce application with modern UI, secure payments, and admin dashboard. Built with React, Node.js, and MongoDB."
+    image: "/assets/images/projects/ecommerce.jpg"
+    technologies: ["React", "Node.js", "MongoDB", "Stripe", "JWT"]
+    github_url: "https://github.com/yourusername/ecommerce-platform"
+    demo_url: "https://your-ecommerce-demo.vercel.app"
+    featured: true
+    status: "completed"
+
+  - title: "Task Management App"
+    description: "Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features."
+    image: "/assets/images/projects/taskmanager.jpg"
+    technologies: ["Vue.js", "Socket.io", "Express", "PostgreSQL"]
+    github_url: "https://github.com/yourusername/task-manager"
+    demo_url: "https://your-taskmanager-demo.netlify.app"
+    featured: true
+    status: "completed"
+
+  - title: "Weather Dashboard"
+    description: "Beautiful weather application with location-based forecasts, interactive maps, and historical weather data visualization."
+    image: "/assets/images/projects/weather.jpg"
+    technologies: ["JavaScript", "Chart.js", "Weather API", "Leaflet"]
+    github_url: "https://github.com/yourusername/weather-dashboard"
+    demo_url: "https://your-weather-app.github.io"
+    featured: true
+    status: "completed"
+
+  - title: "Social Media Analytics"
+    description: "Analytics dashboard for social media metrics with data visualization, automated reporting, and integration with multiple platforms."
+    image: "/assets/images/projects/analytics.jpg"
+    technologies: ["Python", "Django", "D3.js", "REST APIs"]
+    github_url: "https://github.com/yourusername/social-analytics"
+    demo_url: "https://your-analytics-demo.herokuapp.com"
+    featured: true
+    status: "completed"
+
+  - title: "Portfolio Website"
+    description: "This responsive portfolio website built with Jekyll, featuring dynamic content management through _config.yaml and modern design."
+    image: "/assets/images/projects/portfolio.jpg"
+    technologies: ["Jekyll", "Sass", "JavaScript", "GitHub Pages"]
+    github_url: "https://github.com/yourusername/portfolio"
+    demo_url: "https://yourusername.github.io/portfolio"
+    featured: true
+    status: "completed"
+
+  - title: "Recipe Finder App"
+    description: "Mobile-responsive recipe application with ingredient-based search, meal planning, and shopping list generation features."
+    image: "/assets/images/projects/recipe.jpg"
+    technologies: ["React Native", "Firebase", "Recipe API"]
+    github_url: "https://github.com/yourusername/recipe-finder"
+    demo_url: "https://your-recipe-app.vercel.app"
+    featured: false
+    status: "completed"
+
+# Experience Section
+experience:
+  - position: "Senior Full Stack Developer"
+    company: "Tech Solutions Inc."
+    duration: "2022 - Present"
+    description: "Lead development of enterprise web applications using modern tech stack. Mentor junior developers and architect scalable solutions."
+    achievements:
+      - "Improved application performance by 40% through optimization techniques"
+      - "Led a team of 5 developers on multiple high-impact projects"
+      - "Implemented CI/CD pipelines reducing deployment time by 60%"
+
+  - position: "Full Stack Developer"
+    company: "Digital Agency Pro"
+    duration: "2020 - 2022"
+    description: "Developed responsive web applications for diverse clients ranging from startups to enterprise companies."
+    achievements:
+      - "Built 15+ client websites with 100% on-time delivery"
+      - "Introduced modern development practices improving team productivity"
+      - "Maintained 99.9% uptime for all deployed applications"
+
+  - position: "Frontend Developer"
+    company: "Creative Web Studio"
+    duration: "2019 - 2020"
+    description: "Specialized in creating pixel-perfect, responsive user interfaces and improving user experience across web platforms."
+    achievements:
+      - "Converted PSD designs to responsive HTML/CSS with 100% accuracy"
+      - "Improved website loading speed by 35% through optimization"
+      - "Collaborated with UX designers to enhance user experience"
+
+  - position: "Junior Web Developer"
+    company: "StartUp Hub"
+    duration: "2018 - 2019"
+    description: "Started my career building websites and web applications while learning modern development practices and technologies."
+    achievements:
+      - "Developed 10+ websites using HTML, CSS, and JavaScript"
+      - "Learned React.js and Node.js to become a fullstack developer"
+      - "Contributed to open-source projects gaining community recognition"
+
+# Contact Section
+contact:
+  email: "your.email@example.com"
+  phone: "+91 9876543210"  # Optional, remove if you don't want to display
+  location: "Mumbai, India"  # Optional, remove if you don't want to display
+  message: "I'm always interested in new opportunities and exciting projects. Whether you want to discuss a potential collaboration or just say hello, feel free to reach out!"
+  form_action: "https://formspree.io/f/your-form-id"  # Replace with your Formspree endpoint
+
+# Social Media Links
+social:
+  - name: "GitHub"
+    url: "https://github.com/yourusername"
+    icon: "fab fa-github"
+  - name: "LinkedIn"
+    url: "https://linkedin.com/in/yourusername"
+    icon: "fab fa-linkedin"
+  - name: "Twitter"
+    url: "https://twitter.com/yourusername"
+    icon: "fab fa-twitter"
+  - name: "Instagram"
+    url: "https://instagram.com/yourusername"
+    icon: "fab fa-instagram"
+  - name: "Dev.to"
+    url: "https://dev.to/yourusername"
+    icon: "fab fa-dev"
+
+# Resume/CV
+resume_url: "/assets/files/resume.pdf"  # Optional: Add your resume file
+
+# Blog Settings (if you want to add a blog section later)
+blog:
+  enabled: false
+  posts_per_page: 6
+
+# Theme Customization
+theme:
+  primary_color: "#2563eb"      # Blue
+  secondary_color: "#64748b"    # Slate
+  accent_color: "#f59e0b"       # Amber
+  text_color: "#1f2937"         # Gray-800
+  background_color: "#ffffff"   # White
+  dark_mode: true               # Enable dark mode toggle
+
+# Additional Features
+features:
+  animations: true              # Enable scroll animations
+  particle_background: false   # Particle.js background effect
+  typed_text: true             # Typing animation for hero text
+  smooth_scroll: true          # Smooth scrolling navigation
+  back_to_top: true            # Back to top button
+  loading_screen: false        # Loading screen animation

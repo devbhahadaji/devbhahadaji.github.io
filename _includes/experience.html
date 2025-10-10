@@ -1,0 +1,49 @@
+<!-- Experience Section -->
+<section id="experience" class="experience">
+  <div class="container">
+    <h2 class="section-title animate-on-scroll">Professional Experience</h2>
+    <div class="timeline">
+      {% for exp in site.experience %}
+      <div class="timeline-item animate-on-scroll">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">{{ exp.position }}</h3>
+          <h4 class="timeline-company">
+            {% if exp.company_url %}
+            <a href="{{ exp.company_url }}" target="_blank">{{ exp.company }}</a>
+            {% else %}
+            {{ exp.company }}
+            {% endif %}
+          </h4>
+          <span class="timeline-date">
+            <i class="fas fa-calendar-alt"></i>
+            {{ exp.duration }}
+          </span>
+          {% if exp.location %}
+          <span class="timeline-location">
+            <i class="fas fa-map-marker-alt"></i>
+            {{ exp.location }}
+          </span>
+          {% endif %}
+          <p class="timeline-description">{{ exp.description }}</p>
+          {% if exp.achievements %}
+          <ul class="timeline-achievements">
+            {% for achievement in exp.achievements %}
+            <li>{{ achievement }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          {% if exp.technologies %}
+          <div class="timeline-tech">
+            <strong>Technologies:</strong>
+            {% for tech in exp.technologies %}
+            <span class="tech-tag">{{ tech }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-brand">
+      <a href="{{ '/' | relative_url }}">{{ site.name | default: site.title }}</a>
+    </div>
+    <div class="nav-menu" id="nav-menu">
+      <a href="#hero" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      {% if site.resume_url %}
+      <a href="{{ site.resume_url | relative_url }}" target="_blank" class="nav-link">Resume</a>
+      {% endif %}
+      {% if site.theme.dark_mode %}
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      {% endif %}
+    </div>
+    <div class="nav-toggle" id="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>

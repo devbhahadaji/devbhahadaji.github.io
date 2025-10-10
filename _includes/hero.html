@@ -1,0 +1,33 @@
+<!-- Hero Section -->
+<section id="hero" class="hero">
+  {% if site.features.particle_background %}
+  <div id="particles-js"></div>
+  {% endif %}
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          {% if site.features.typed_text %}
+          <span id="typed-text"></span>
+          {% else %}
+          {{ site.name }}
+          {% endif %}
+        </h1>
+        <p class="hero-subtitle">{{ site.title }}</p>
+        <p class="hero-description">{{ site.description }}</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary smooth-scroll">View My Work</a>
+          <a href="#contact" class="btn btn-secondary smooth-scroll">Get In Touch</a>
+          {% if site.resume_url %}
+          <a href="{{ site.resume_url | relative_url }}" target="_blank" class="btn btn-secondary">
+            <i class="fas fa-download"></i> Resume
+          </a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="{{ site.profile_image | relative_url }}" alt="{{ site.name }}" class="profile-img">
+      </div>
+    </div>
+  </div>
+</section>
