@@ -349,11 +349,6 @@ img {
 }
 
 .hero-image {
-  display: flex;
-  justify-content: center;
-}
-
-.profile-img {
   width: 300px;
   height: 300px;
   object-fit: cover;
@@ -361,6 +356,13 @@ img {
   border: 8px solid white;
   box-shadow: 0 20px 40px var(--shadow);
   transition: var(--transition);
+  display: flex;
+  justify-content: center;
+}
+
+.profile-img {
+    position: relative;
+    top:5px;
 }
 
 .profile-img:hover {
