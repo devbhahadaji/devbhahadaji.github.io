@@ -92,7 +92,7 @@ skills:
       - "Sass/SCSS"
       - "Tailwind CSS"
       - "Bootstrap"
-      - "Webpack"
+      # - "Webpack"
       - "Vite"
 
   - category: "Backend"
@@ -100,33 +100,33 @@ skills:
       - "Node.js"
       - "Express.js"
       - "Python"
-      - "Django"
-      - "Flask"
+      # - "Django"
+      # - "Flask"
       - "PHP"
       - "Laravel"
       - "REST APIs"
-      - "GraphQL"
-      - "Socket.io"
+      # - "GraphQL"
+      # - "Socket.io"
 
   - category: "Database"
     items:
       - "MongoDB"
-      - "PostgreSQL"
+      # - "PostgreSQL"
       - "MySQL"
-      - "Redis"
+      # - "Redis"
       - "Firebase"
-      - "Supabase"
+      # - "Supabase"
 
   - category: "DevOps & Tools"
     items:
       - "Git & GitHub"
-      - "Docker"
+      # - "Docker"
       - "AWS"
-      - "Vercel"
-      - "Netlify"
+      # - "Vercel"
+      # - "Netlify"
       - "GitHub Actions"
-      - "Jest"
-      - "Cypress"
+      # - "Jest"
+      # - "Cypress"
       - "Postman"
       - "VS Code"
 
@@ -134,7 +134,6 @@ skills:
 projects:
   - title: "E-Commerce Platform"
     description: "Full-stack e-commerce application with modern UI, secure payments, and admin dashboard. Built with React, Node.js, and MongoDB."
-    image: "/assets/images/projects/ecommerce.jpg"
     technologies: ["React", "Node.js", "MongoDB", "Stripe", "JWT"]
     github_url: "https://github.com/yourusername/ecommerce-platform"
     demo_url: "https://your-ecommerce-demo.vercel.app"
@@ -143,7 +142,6 @@ projects:
 
   - title: "Task Management App"
     description: "Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features."
-    image: "/assets/images/projects/taskmanager.jpg"
     technologies: ["Vue.js", "Socket.io", "Express", "PostgreSQL"]
     github_url: "https://github.com/yourusername/task-manager"
     demo_url: "https://your-taskmanager-demo.netlify.app"
@@ -152,7 +150,6 @@ projects:
 
   - title: "Weather Dashboard"
     description: "Beautiful weather application with location-based forecasts, interactive maps, and historical weather data visualization."
-    image: "/assets/images/projects/weather.jpg"
     technologies: ["JavaScript", "Chart.js", "Weather API", "Leaflet"]
     github_url: "https://github.com/yourusername/weather-dashboard"
     demo_url: "https://your-weather-app.github.io"
@@ -161,7 +158,6 @@ projects:
 
   - title: "Social Media Analytics"
     description: "Analytics dashboard for social media metrics with data visualization, automated reporting, and integration with multiple platforms."
-    image: "/assets/images/projects/analytics.jpg"
     technologies: ["Python", "Django", "D3.js", "REST APIs"]
     github_url: "https://github.com/yourusername/social-analytics"
     demo_url: "https://your-analytics-demo.herokuapp.com"
@@ -170,16 +166,14 @@ projects:
 
   - title: "Portfolio Website"
     description: "This responsive portfolio website built with Jekyll, featuring dynamic content management through _config.yaml and modern design."
-    image: "/assets/images/projects/portfolio.jpg"
     technologies: ["Jekyll", "Sass", "JavaScript", "GitHub Pages"]
-    github_url: "https://github.com/yourusername/portfolio"
-    demo_url: "https://yourusername.github.io/portfolio"
+    github_url: "https://github.com/devbhahadaji/portfolio"
+    demo_url: "https://devbhahadaji.github.io/portfolio"
     featured: true
     status: "completed"
 
   - title: "Recipe Finder App"
     description: "Mobile-responsive recipe application with ingredient-based search, meal planning, and shopping list generation features."
-    image: "/assets/images/projects/recipe.jpg"
     technologies: ["React Native", "Firebase", "Recipe API"]
     github_url: "https://github.com/yourusername/recipe-finder"
     demo_url: "https://your-recipe-app.vercel.app"
@@ -227,28 +221,28 @@ experience:
 # Contact Section
 contact:
   email: "shubhamchoudhary18062002@gmail.com"
-  phone: "+91 7742217724"  # Optional, remove if you don't want to display
-  location: "Rajasthan, India"  # Optional, remove if you don't want to display
+  phone: "+91 7742217724" 
+  location: "Rajasthan, India"
   message: "I'm always interested in new opportunities and exciting projects. Whether you want to discuss a potential collaboration or just say hello, feel free to reach out!"
   form_action: "https://formspree.io/f/your-form-id"  # Replace with your Formspree endpoint
 
 # Social Media Links
 social:
   - name: "GitHub"
-    url: "https://github.com/yourusername"
+    url: "https://github.com/shubhambhahada"
     icon: "fab fa-github"
   - name: "LinkedIn"
-    url: "https://linkedin.com/in/yourusername"
+    url: "www.linkedin.com/in/shubham-bhahada-777048220"
     icon: "fab fa-linkedin"
   - name: "Twitter"
-    url: "https://twitter.com/yourusername"
+    url: "https://twitter.com/iamshubhamja8"
     icon: "fab fa-twitter"
   - name: "Instagram"
-    url: "https://instagram.com/yourusername"
+    url: "https://instagram.com/iamshubhamja8"
     icon: "fab fa-instagram"
-  - name: "Dev.to"
-    url: "https://dev.to/yourusername"
-    icon: "fab fa-dev"
+  # - name: "Dev.to"
+  #   url: "https://dev.to/yourusername"
+  #   icon: "fab fa-dev"
 
 # Resume/CV
 resume_url: "/assets/files/resume.pdf"  # Optional: Add your resume file
