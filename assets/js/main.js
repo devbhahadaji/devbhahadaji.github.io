@@ -220,8 +220,9 @@
       this.activeFilter = filter;
       
       elements.projectCards.forEach(card => {
-        const cardTech = card.getAttribute('data-tech');
-        const shouldShow = filter === 'all' || cardTech.includes(filter.toLowerCase());
+        const cardTech = card.getAttribute('data-tech') || '';
+        const techArray = cardTech.split(' ').filter(tech => tech.length > 0);
+        const shouldShow = filter === 'all' || techArray.includes(filter.toLowerCase());
         
         if (shouldShow) {
           card.style.display = 'block';

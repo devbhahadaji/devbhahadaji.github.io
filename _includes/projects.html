@@ -5,9 +5,15 @@
     
     <div class="project-filters animate-on-scroll">
       <button class="filter-btn active" data-filter="all">All</button>
-      {% assign technologies = site.projects | map: 'technologies' | join: ',' | split: ',' | uniq | sort %}
-      {% for tech in technologies %}
-      {% assign clean_tech = tech | strip | downcase %}
+      {% assign all_technologies = "" | split: "" %}
+      {% for project in site.projects %}
+        {% for tech in project.technologies %}
+          {% assign all_technologies = all_technologies | push: tech %}
+        {% endfor %}
+      {% endfor %}
+      {% assign unique_technologies = all_technologies | uniq | sort %}
+      {% for tech in unique_technologies %}
+      {% assign clean_tech = tech | strip | downcase | replace: ".", "" | replace: " ", "-" %}
       <button class="filter-btn" data-filter="{{ clean_tech }}">{{ tech | strip }}</button>
       {% endfor %}
     </div>
@@ -15,7 +21,7 @@
     <!-- Projects Grid -->
     <div class="projects-grid">
       {% for project in site.projects %}
-      <div class="project-card animate-on-scroll" data-tech="{% for tech in project.technologies %}{{ tech | downcase | strip }}{% unless forloop.last %} {% endunless %}{% endfor %}">
+      <div class="project-card animate-on-scroll" data-tech="{% for tech in project.technologies %}{{ tech | strip | downcase | replace: ".", "" | replace: " ", "-" }}{% unless forloop.last %} {% endunless %}{% endfor %}">
         <div class="project-image">
           {% if project.image %}
           <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" loading="lazy">
