@@ -7,12 +7,12 @@
 title: "Fullstack Web Developer & Software Engineer"
 name: "Shubham Bhahada"
 description: "Passionate fullstack developer creating innovative web solutions with modern technologies and best practices."
-url: "https://shubhambhahada.github.io"
+url: "https://bhahadaji.github.io"
 baseurl: "/portfolio"
 lang: "en"
 
 # Personal Information
-email: "your.email@example.com"
+email: "shubhamchoudhary18062002@gmail.com"
 profile_image: "/assets/images/profile.jpg"
 
 # SEO and Analytics
@@ -226,9 +226,9 @@ experience:
 
 # Contact Section
 contact:
-  email: "your.email@example.com"
-  phone: "+91 9876543210"  # Optional, remove if you don't want to display
-  location: "Mumbai, India"  # Optional, remove if you don't want to display
+  email: "shubhamchoudhary18062002@gmail.com"
+  phone: "+91 7742217724"  # Optional, remove if you don't want to display
+  location: "Rajasthan, India"  # Optional, remove if you don't want to display
   message: "I'm always interested in new opportunities and exciting projects. Whether you want to discuss a potential collaboration or just say hello, feel free to reach out!"
   form_action: "https://formspree.io/f/your-form-id"  # Replace with your Formspree endpoint
 
