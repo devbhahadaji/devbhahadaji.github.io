@@ -270,7 +270,7 @@ theme:
 # Additional Features
 features:
   animations: true              # Enable scroll animations
-  particle_background: false   # Particle.js background effect
+  particle_background: true   # Particle.js background effect
   typed_text: true             # Typing animation for hero text
   smooth_scroll: true          # Smooth scrolling navigation
   back_to_top: true            # Back to top button
