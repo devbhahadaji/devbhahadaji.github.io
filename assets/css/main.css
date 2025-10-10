@@ -352,6 +352,7 @@ img {
   width: 300px;
   height: 300px;
   border-radius: 50%;
+  object-fit: cover;
   border: 8px solid white;
   box-shadow: 0 20px 40px var(--shadow);
   transition: var(--transition);
@@ -361,7 +362,6 @@ img {
 
 .profile-img {
     border-radius: 50%;
-    object-fit: cover;
     position: relative;
     top:5px;
 }
