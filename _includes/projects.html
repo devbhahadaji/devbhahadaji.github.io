@@ -3,7 +3,6 @@
   <div class="container">
     <h2 class="section-title animate-on-scroll">Featured Projects</h2>
     
-    <!-- Project Filters -->
     <div class="project-filters animate-on-scroll">
       <button class="filter-btn active" data-filter="all">All</button>
       {% assign technologies = site.projects | map: 'technologies' | join: ',' | split: ',' | uniq | sort %}

@@ -148,19 +148,6 @@ img {
 .section-title {
   text-align: center;
   margin-bottom: var(--spacing-12);
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -var(--spacing-2);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-  border-radius: 2px;
 }
 
 /* Buttons */
@@ -385,8 +372,8 @@ img {
 
 /* Optimize particles for mobile devices */
 @media (max-width: 768px) {
-  #particles-js {
-    display: none; /* Hide particles on mobile for better performance */
+  #particles-js canvas {
+    opacity: 0.2; /* Reduce opacity on mobile for better performance and visibility */
   }
 }
 

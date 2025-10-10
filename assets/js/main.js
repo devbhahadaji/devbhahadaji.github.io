@@ -462,7 +462,7 @@
   
   class ThemeToggle {
     constructor() {
-      this.currentTheme = localStorage.getItem('theme') || 'light';
+      this.currentTheme = localStorage.getItem('theme') || 'dark';
       this.init();
     }
 
@@ -582,23 +582,41 @@
       const particlesContainer = document.getElementById('particles-js');
       if (!particlesContainer || typeof particlesJS === 'undefined') return;
 
+      // Responsive particle count based on screen size
+      const isMobile = window.innerWidth <= 768;
+      const isTablet = window.innerWidth <= 1024;
+      
+      let particleCount = 80; // Desktop
+      let lineDistance = 150;
+      let speed = 6;
+      
+      if (isMobile) {
+        particleCount = 30; // Fewer particles on mobile
+        lineDistance = 100;
+        speed = 3;
+      } else if (isTablet) {
+        particleCount = 50; // Medium particles on tablet
+        lineDistance = 120;
+        speed = 4;
+      }
+
       particlesJS('particles-js', {
         particles: {
-          number: { value: 80, density: { enable: true, value_area: 800 } },
+          number: { value: particleCount, density: { enable: true, value_area: 800 } },
           color: { value: '#2563eb' },
           shape: { type: 'circle' },
           opacity: { value: 0.5, random: false },
           size: { value: 3, random: true },
           line_linked: {
             enable: true,
-            distance: 150,
+            distance: lineDistance,
             color: '#2563eb',
             opacity: 0.4,
             width: 1
           },
           move: {
             enable: true,
-            speed: 6,
+            speed: speed,
             direction: 'none',
             random: false,
             straight: false,
@@ -609,7 +627,7 @@
         interactivity: {
           detect_on: 'canvas',
           events: {
-            onhover: { enable: true, mode: 'repulse' },
+            onhover: { enable: !isMobile, mode: 'repulse' }, // Disable hover on mobile for performance
             onclick: { enable: true, mode: 'push' },
             resize: true
           }
