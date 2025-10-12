@@ -61,7 +61,6 @@
     }
   };
 
-
   // ===================================================================
   // DOM ELEMENTS
   // ===================================================================
@@ -198,23 +197,15 @@
   // PROJECT FILTERING
   // ===================================================================
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const elements = {
-      projectCards: document.querySelectorAll('.project-card'),
-      filterBtns: document.querySelectorAll('.filter-btn')
-    };
-    new ProjectFilter(elements);
-  });
-  
   class ProjectFilter {
     constructor(elements) {
-      this.elements = elements;
+      this.elements = elements; // Store passed elements
       this.activeFilter = 'all';
       this.init();
     }
 
     init() {
-      if (!this.elements.filterBtns.length) return;
+      if (!this.elements.filterBtns || !this.elements.filterBtns.length) return;
 
       this.elements.filterBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -263,6 +254,16 @@
       activeBtn.classList.add('active');
     }
   }
+
+  // Usage:
+  document.addEventListener("DOMContentLoaded", () => {
+    const projectElements = {
+      projectCards: document.querySelectorAll('.project-card'),
+      filterBtns: document.querySelectorAll('.filter-btn')
+    };
+
+    new ProjectFilter(projectElements);
+  });
 
   // ===================================================================
   // SCROLL ANIMATIONS
@@ -810,9 +811,14 @@
 
     initializeComponents() {
       try {
+        const projectElements = {
+          projectCards: document.querySelectorAll('.project-card'),
+          filterBtns: document.querySelectorAll('.filter-btn')
+        };
+
         // Initialize all components
         new Navigation();
-        new ProjectFilter();
+        new ProjectFilter(projectElements);
         new ScrollAnimations();
         new ContactForm();
         new ThemeToggle();
