@@ -3,13 +3,13 @@
    Modern JavaScript with ES6+ features and performance optimization
    ================================================================= */
 
-(function() {
+(function () {
   'use strict';
 
   // ===================================================================
   // UTILITIES AND HELPERS
   // ===================================================================
-  
+
   const utils = {
     // Debounce helper for performance optimization
     debounce(func, wait, immediate) {
@@ -29,7 +29,7 @@
     // Throttle helper for scroll events
     throttle(func, limit) {
       let inThrottle;
-      return function(...args) {
+      return function (...args) {
         if (!inThrottle) {
           func.apply(this, args);
           inThrottle = true;
@@ -60,19 +60,12 @@
       });
     }
   };
-  
-  document.addEventListener("DOMContentLoaded", () => {
-  const elements = {
-    projectCards: document.querySelectorAll('.project-card'),
-    filterBtns: document.querySelectorAll('.filter-btn')
-  };
-  new ProjectFilter(elements);
-});
+
 
   // ===================================================================
   // DOM ELEMENTS
   // ===================================================================
-  
+
   const elements = {
     navbar: document.getElementById('navbar'),
     navToggle: document.getElementById('nav-toggle'),
@@ -90,7 +83,7 @@
   // ===================================================================
   // NAVIGATION FUNCTIONALITY
   // ===================================================================
-  
+
   class Navigation {
     constructor() {
       this.isMenuOpen = false;
@@ -102,11 +95,11 @@
       this.handleMobileMenu();
       this.handleSmoothScroll();
       this.handleActiveLinks();
-      
+
       // Event listeners
       window.addEventListener('scroll', utils.throttle(() => this.handleScroll(), 16));
       elements.navToggle?.addEventListener('click', () => this.toggleMobileMenu());
-      
+
       // Close mobile menu when clicking outside
       document.addEventListener('click', (e) => {
         if (!elements.navMenu.contains(e.target) && !elements.navToggle.contains(e.target)) {
@@ -118,7 +111,7 @@
     handleScroll() {
       const scrolled = window.pageYOffset > 50;
       elements.navbar?.classList.toggle('scrolled', scrolled);
-      
+
       // Update active navigation links
       this.updateActiveNavLinks();
     }
@@ -127,7 +120,7 @@
       this.isMenuOpen = !this.isMenuOpen;
       elements.navMenu?.classList.toggle('active', this.isMenuOpen);
       elements.navToggle?.classList.toggle('active', this.isMenuOpen);
-      
+
       // Prevent body scroll when menu is open
       document.body.style.overflow = this.isMenuOpen ? 'hidden' : '';
     }
@@ -156,7 +149,7 @@
             e.preventDefault();
             const targetId = link.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
               utils.smoothScrollTo(targetElement);
             }
@@ -170,7 +163,7 @@
           e.preventDefault();
           const targetId = link.getAttribute('href');
           const targetElement = document.querySelector(targetId);
-          
+
           if (targetElement) {
             utils.smoothScrollTo(targetElement);
           }
@@ -204,67 +197,78 @@
   // ===================================================================
   // PROJECT FILTERING
   // ===================================================================
-  
-  class ProjectFilter {
-    constructor() {
-      this.activeFilter = 'all';
-      this.init();
-    }
 
-    init() {
-      if (!elements.filterBtns.length) return;
+  document.addEventListener("DOMContentLoaded", () => {
+    const elements = {
+      projectCards: document.querySelectorAll('.project-card'),
+      filterBtns: document.querySelectorAll('.filter-btn')
+    };
 
-      elements.filterBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          const filter = btn.getAttribute('data-filter');
-          this.filterProjects(filter);
-          this.updateActiveButton(btn);
+    class ProjectFilter {
+      constructor(elements) {
+        this.elements = elements;
+        this.activeFilter = 'all';
+        this.init();
+      }
+
+      init() {
+        if (!this.elements.filterBtns.length) return;
+
+        this.elements.filterBtns.forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const filter = btn.getAttribute('data-filter');
+            this.filterProjects(filter);
+            this.updateActiveButton(btn);
+          });
         });
-      });
-    }
+      }
 
-    filterProjects(filter) {
-      this.activeFilter = filter;
-      
-      elements.projectCards.forEach(card => {
-        const cardTech = card.getAttribute('data-tech') || '';
-        const techArray = cardTech.split(' ').filter(tech => tech.length > 0);
-        const shouldShow = filter === 'all' || techArray.includes(filter.toLowerCase());
-        
-        if (shouldShow) {
-          card.style.display = 'block';
-          card.style.opacity = '0';
-          card.style.transform = 'scale(0.8)';
-          
-          // Animate in
-          setTimeout(() => {
+      filterProjects(filter) {
+        this.activeFilter = filter;
+
+        this.elements.projectCards.forEach(card => {
+          const cardTech = card.getAttribute('data-tech') || '';
+          const techArray = cardTech
+            .split(' ')
+            .map(str => str.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-'));
+          const shouldShow = filter === 'all' || techArray.includes(filter.toLowerCase());
+
+          if (shouldShow) {
+            card.style.display = 'block';
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.8)';
+
+            setTimeout(() => {
+              card.style.transition = 'all 0.3s ease';
+              card.style.opacity = '1';
+              card.style.transform = 'scale(1)';
+            }, 100);
+          } else {
             card.style.transition = 'all 0.3s ease';
-            card.style.opacity = '1';
-            card.style.transform = 'scale(1)';
-          }, 100);
-        } else {
-          card.style.transition = 'all 0.3s ease';
-          card.style.opacity = '0';
-          card.style.transform = 'scale(0.8)';
-          
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 300);
-        }
-      });
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.8)';
+
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+          }
+        });
+      }
+
+      updateActiveButton(activeBtn) {
+        this.elements.filterBtns.forEach(btn => btn.classList.remove('active'));
+        activeBtn.classList.add('active');
+      }
     }
 
-    updateActiveButton(activeBtn) {
-      elements.filterBtns.forEach(btn => btn.classList.remove('active'));
-      activeBtn.classList.add('active');
-    }
-  }
+    new ProjectFilter(elements);
+  });
 
   // ===================================================================
   // SCROLL ANIMATIONS
   // ===================================================================
-  
+
   class ScrollAnimations {
     constructor() {
       this.animatedElements = [];
@@ -292,10 +296,10 @@
       entries.forEach(entry => {
         if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
           entry.target.classList.add('animated');
-          
+
           // Add staggered animation for grid items
           if (entry.target.parentElement.classList.contains('projects-grid') ||
-              entry.target.parentElement.classList.contains('skills-grid')) {
+            entry.target.parentElement.classList.contains('skills-grid')) {
             const siblings = Array.from(entry.target.parentElement.children);
             const index = siblings.indexOf(entry.target);
             entry.target.style.animationDelay = `${index * 0.1}s`;
@@ -308,7 +312,7 @@
   // ===================================================================
   // CONTACT FORM HANDLING
   // ===================================================================
-  
+
   class ContactForm {
     constructor() {
       this.isSubmitting = false;
@@ -319,7 +323,7 @@
       if (!elements.contactForm) return;
 
       elements.contactForm.addEventListener('submit', (e) => this.handleSubmit(e));
-      
+
       // Add real-time validation
       const inputs = elements.contactForm.querySelectorAll('input, textarea');
       inputs.forEach(input => {
@@ -330,14 +334,14 @@
 
     async handleSubmit(e) {
       e.preventDefault();
-      
+
       if (this.isSubmitting) return;
-      
+
       const submitBtn = document.getElementById('submit-btn');
       const btnText = submitBtn.querySelector('.btn-text');
       const btnLoading = submitBtn.querySelector('.btn-loading');
       const formStatus = document.getElementById('form-status');
-      
+
       // Validate form
       if (!this.validateForm()) {
         this.showStatus('Please fill in all required fields correctly.', 'error');
@@ -352,7 +356,7 @@
 
       try {
         const formData = new FormData(elements.contactForm);
-        
+
         // Simulate form submission (replace with actual endpoint)
         const response = await fetch(elements.contactForm.action, {
           method: 'POST',
@@ -365,7 +369,7 @@
         if (response.ok) {
           this.showStatus('Thank you! Your message has been sent successfully.', 'success');
           elements.contactForm.reset();
-          
+
           // Redirect after success
           setTimeout(() => {
             window.location.href = '/thank-you';
@@ -420,7 +424,7 @@
 
       // Show/hide error
       this.toggleFieldError(field, errorMessage);
-      
+
       return isValid;
     }
 
@@ -468,7 +472,7 @@
   // ===================================================================
   // THEME TOGGLE (DARK MODE)
   // ===================================================================
-  
+
   class ThemeToggle {
     constructor() {
       this.currentTheme = localStorage.getItem('theme') || 'dark';
@@ -493,7 +497,7 @@
     setTheme(theme) {
       document.documentElement.setAttribute('data-theme', theme);
       localStorage.setItem('theme', theme);
-      
+
       // Update icon
       const icon = elements.themeToggle?.querySelector('i');
       if (icon) {
@@ -505,7 +509,7 @@
   // ===================================================================
   // TYPING ANIMATION
   // ===================================================================
-  
+
   class TypingAnimation {
     constructor() {
       this.strings = ['Shubham Bhahada', 'Fullstack Developer', 'Web Developer', 'Software Engineer'];
@@ -515,19 +519,19 @@
       this.typeSpeed = 100;
       this.deleteSpeed = 50;
       this.pauseTime = 2000;
-      
+
       this.init();
     }
 
     init() {
       if (!elements.typedText) return;
-      
+
       this.type();
     }
 
     type() {
       const currentString = this.strings[this.currentStringIndex];
-      
+
       if (this.isDeleting) {
         elements.typedText.textContent = currentString.substring(0, this.currentCharIndex - 1);
         this.currentCharIndex--;
@@ -553,7 +557,7 @@
   // ===================================================================
   // BACK TO TOP BUTTON
   // ===================================================================
-  
+
   class BackToTop {
     constructor() {
       this.init();
@@ -581,7 +585,7 @@
   // ===================================================================
   // PARTICLE BACKGROUND (OPTIONAL)
   // ===================================================================
-  
+
   class ParticleBackground {
     constructor() {
       this.init();
@@ -594,11 +598,11 @@
       // Responsive particle count based on screen size
       const isMobile = window.innerWidth <= 768;
       const isTablet = window.innerWidth <= 1024;
-      
+
       let particleCount = 80; // Desktop
       let lineDistance = 150;
       let speed = 6;
-      
+
       if (isMobile) {
         particleCount = 30; // Fewer particles on mobile
         lineDistance = 100;
@@ -649,7 +653,7 @@
   // ===================================================================
   // PERFORMANCE OPTIMIZATIONS
   // ===================================================================
-  
+
   class PerformanceOptimizer {
     constructor() {
       this.init();
@@ -658,17 +662,17 @@
     init() {
       // Lazy load images
       this.lazyLoadImages();
-      
+
       // Preload critical resources
       this.preloadCriticalResources();
-      
+
       // Add loading states
       this.addLoadingStates();
     }
 
     lazyLoadImages() {
       const images = document.querySelectorAll('img[loading="lazy"]');
-      
+
       if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
@@ -697,7 +701,7 @@
     addLoadingStates() {
       // Add loading class to body, remove after everything loads
       document.body.classList.add('loading');
-      
+
       window.addEventListener('load', () => {
         document.body.classList.remove('loading');
         document.body.classList.add('loaded');
@@ -708,7 +712,7 @@
   // ===================================================================
   // ACCESSIBILITY ENHANCEMENTS
   // ===================================================================
-  
+
   class AccessibilityEnhancements {
     constructor() {
       this.init();
@@ -790,7 +794,7 @@
   // ===================================================================
   // MAIN INITIALIZATION
   // ===================================================================
-  
+
   class Portfolio {
     constructor() {
       this.init();
