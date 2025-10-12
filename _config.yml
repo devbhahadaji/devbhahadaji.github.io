@@ -130,47 +130,6 @@ skills:
       - "Postman"
       - "VS Code"
 
-# Projects Section
-projects:
-  - title: "Learning Management System (LMS)"
-    description: "Full-featured Learning Management System built with Laravel supporting SCORM integration, multi-auth portals, quizzes, analytics, and eCommerce for paid courses."
-    technologies: ["Laravel", "PHP", "MySQL", "SCORM", "Bootstrap"]
-    github_url: "https://opexedu.com/"
-    demo_url: "https://www.sharp-haslett.168-119-8-226.plesk.page/newSite/"
-    featured: true
-    status: "completed"
-
-  - title: "Rent-a-Lounge"
-    description: "Feature-rich eCommerce platform for booking and renting lounge spaces. Includes dynamic product variations, image cropping tool, booking calendar, and review system."
-    technologies: ["Laravel", "PHP", "MySQL", "JavaScript", "jQuery"]
-    github_url: "https://nsinfosoft.com/"
-    demo_url: "https://www.sharp-haslett.168-119-8-226.plesk.page/newSite/"
-    featured: true
-    status: "completed"
-
-  - title: "HDVowendo"
-    description: "Cross-platform logistics management app for vehicles and drivers with real-time tracking and QR code scanning, built using Flutter."
-    technologies: ["Flutter", "Dart", "REST APIs"]
-    github_url: "https://hdvowendo.com/"
-    demo_url: "https://hdvowendo.com/"
-    featured: true
-    status: "completed"
-
-  - title: "PartPal"
-    description: "Node.js-based digital ticketing platform with secure authentication, booking management, QR code ticket validation, and dynamic email notifications."
-    technologies: ["Node.js", "Express.js", "MongoDB", "JWT", "Nodemailer"]
-    github_url: "https://sumxinfotech.com/"
-    demo_url: "https://sumxinfotech.com/"
-    featured: true
-    status: "completed"
-
-  - title: "Eparhawk"
-    description: "Task management and learning platform built with React and serverless Node.js on AWS Lambda, featuring real-time dashboards, multi-organization support, and KPI tracking."
-    technologies: ["React", "Node.js", "AWS Lambda", "MySQL", "S3"]
-    github_url: "https://eparhawk.com/"
-    demo_url: "https://eparhawk.com/"
-    featured: true
-    status: "completed"
 
 # Experience Section
 experience:

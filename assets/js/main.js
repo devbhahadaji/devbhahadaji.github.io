@@ -60,6 +60,14 @@
       });
     }
   };
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  const elements = {
+    projectCards: document.querySelectorAll('.project-card'),
+    filterBtns: document.querySelectorAll('.filter-btn')
+  };
+  new ProjectFilter(elements);
+});
 
   // ===================================================================
   // DOM ELEMENTS
