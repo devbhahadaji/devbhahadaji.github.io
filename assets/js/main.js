@@ -203,67 +203,66 @@
       projectCards: document.querySelectorAll('.project-card'),
       filterBtns: document.querySelectorAll('.filter-btn')
     };
-
-    class ProjectFilter {
-      constructor(elements) {
-        this.elements = elements;
-        this.activeFilter = 'all';
-        this.init();
-      }
-
-      init() {
-        if (!this.elements.filterBtns.length) return;
-
-        this.elements.filterBtns.forEach(btn => {
-          btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const filter = btn.getAttribute('data-filter');
-            this.filterProjects(filter);
-            this.updateActiveButton(btn);
-          });
-        });
-      }
-
-      filterProjects(filter) {
-        this.activeFilter = filter;
-
-        this.elements.projectCards.forEach(card => {
-          const cardTech = card.getAttribute('data-tech') || '';
-          const techArray = cardTech
-            .split(' ')
-            .map(str => str.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-'));
-          const shouldShow = filter === 'all' || techArray.includes(filter.toLowerCase());
-
-          if (shouldShow) {
-            card.style.display = 'block';
-            card.style.opacity = '0';
-            card.style.transform = 'scale(0.8)';
-
-            setTimeout(() => {
-              card.style.transition = 'all 0.3s ease';
-              card.style.opacity = '1';
-              card.style.transform = 'scale(1)';
-            }, 100);
-          } else {
-            card.style.transition = 'all 0.3s ease';
-            card.style.opacity = '0';
-            card.style.transform = 'scale(0.8)';
-
-            setTimeout(() => {
-              card.style.display = 'none';
-            }, 300);
-          }
-        });
-      }
-
-      updateActiveButton(activeBtn) {
-        this.elements.filterBtns.forEach(btn => btn.classList.remove('active'));
-        activeBtn.classList.add('active');
-      }
-    }
-
     new ProjectFilter(elements);
   });
+  
+  class ProjectFilter {
+    constructor(elements) {
+      this.elements = elements;
+      this.activeFilter = 'all';
+      this.init();
+    }
+
+    init() {
+      if (!this.elements.filterBtns.length) return;
+
+      this.elements.filterBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const filter = btn.getAttribute('data-filter');
+          this.filterProjects(filter);
+          this.updateActiveButton(btn);
+        });
+      });
+    }
+
+    filterProjects(filter) {
+      this.activeFilter = filter;
+
+      this.elements.projectCards.forEach(card => {
+        const cardTech = card.getAttribute('data-tech') || '';
+        const techArray = cardTech
+          .split(' ')
+          .map(str => str.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-'));
+        const shouldShow = filter === 'all' || techArray.includes(filter.toLowerCase());
+
+        if (shouldShow) {
+          card.style.display = 'block';
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.8)';
+
+          setTimeout(() => {
+            card.style.transition = 'all 0.3s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          }, 100);
+        } else {
+          card.style.transition = 'all 0.3s ease';
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.8)';
+
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 300);
+        }
+      });
+    }
+
+    updateActiveButton(activeBtn) {
+      this.elements.filterBtns.forEach(btn => btn.classList.remove('active'));
+      activeBtn.classList.add('active');
+    }
+  }
 
   // ===================================================================
   // SCROLL ANIMATIONS
