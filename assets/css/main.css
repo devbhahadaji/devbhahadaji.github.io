@@ -885,10 +885,10 @@ section {
 }
 
 /* Keyboard navigation enhancement */
-.keyboard-navigation *:focus {
+/* .keyboard-navigation *:focus {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
-}
+} */
 
 /* Loading states */
 .loading * {
@@ -1225,15 +1225,15 @@ section {
 }
 
 /* Focus styles for accessibility */
-*:focus {
+/* *:focus {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
-}
+} */
 
-button:focus,
+/* button:focus,
 .btn:focus {
   outline: 2px solid var(--accent-color);
-}
+} */
 
 #typed-text {
   display: inline-block;
