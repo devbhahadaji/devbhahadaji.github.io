@@ -373,8 +373,6 @@
         if (response.ok) {
           this.showStatus('Thank you! Your message has been sent successfully.', 'success');
           elements.contactForm.reset();
-
-          // Redirect after success
           setTimeout(() => {
             window.location.href = '/thank-you';
           }, 2000);
