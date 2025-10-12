@@ -2,14 +2,14 @@
     description: "Full-featured Learning Management System built with Laravel supporting SCORM integration, multi-auth portals, quizzes, analytics, and eCommerce for paid courses."
     technologies: ["Laravel", "PHP", "MySQL", "SCORM", "Bootstrap"]
     github_url: "https://opexedu.com/"
-    demo_url: "https://www.sharp-haslett.168-119-8-226.plesk.page/newSite/"
+    demo_url: "https://opexedu.com/"
     featured: true
     status: "completed"
 
   - title: "Rent-a-Lounge"
     description: "Feature-rich eCommerce platform for booking and renting lounge spaces. Includes dynamic product variations, image cropping tool, booking calendar, and review system."
     technologies: ["Laravel", "PHP", "MySQL", "JavaScript", "jQuery"]
-    github_url: "https://nsinfosoft.com/"
+    github_url: "https://www.sharp-haslett.168-119-8-226.plesk.page/newSite/"
     demo_url: "https://www.sharp-haslett.168-119-8-226.plesk.page/newSite/"
     featured: true
     status: "completed"
@@ -23,10 +23,10 @@
     status: "completed"
 
   - title: "PartPal"
-    description: "Node.js-based digital ticketing platform with secure authentication, booking management, QR code ticket validation, and dynamic email notifications."
-    technologies: ["Node.js", "Express.js", "MongoDB", "JWT", "Nodemailer"]
-    github_url: "https://sumxinfotech.com/"
-    demo_url: "https://sumxinfotech.com/"
+    description: "Node.js-based digital ticketing platform with secure authentication, booking management, QR code ticket validation, and dynamic email notifications. only APIs"
+    technologies: ["Node.js", "Express.js", "MongoDB", "JWT", "Nodemailer","Rest APIs"]
+    # github_url: "https://sumxinfotech.com/"
+    # demo_url: "https://sumxinfotech.com/"
     featured: true
     status: "completed"
 
@@ -37,3 +37,12 @@
     demo_url: "https://eparhawk.com/"
     featured: true
     status: "completed"
+
+  - title: "Hire And Fyre"
+    description: "UAE-based Heavy Machinery rental platform with dynamic pricing, booking management, and user reviews, built using Laravel. and React for frontend also building app in Flutter"
+    technologies: ["React","Flutter","Tailwind CSS","TypeScript","Laravel", "PHP", "MySQL"]
+    github_url: "https://hireandfyre.com/"
+    demo_url: "https://hireandfyre.com/"
+    featured: true
+    status: "working on it"
+  
