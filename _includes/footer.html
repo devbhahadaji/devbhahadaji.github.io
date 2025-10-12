@@ -1,3 +1,7 @@
+<a href="https://wa.me/{{ site.contact.whatsapp_number }}" target="_blank" class="whatsapp-fixed"
+  aria-label="Chat with me on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
@@ -17,10 +21,13 @@
 <!-- Scripts -->
 <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 
+{% if site.features.back_to_top %}
 <!-- Back to Top Button -->
 <button id="back-to-top" class="back-to-top" aria-label="Back to top">
   <i class="fas fa-chevron-up"></i>
 </button>
+{% endif %}
+
 
 <!-- Schema.org structured data -->
 <script type="application/ld+json">

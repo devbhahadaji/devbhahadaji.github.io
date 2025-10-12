@@ -176,7 +176,8 @@ experience:
 # Contact Section
 contact:
   email: "shubhamchoudhary18062002@gmail.com"
-  phone: "+91 7742217724" 
+  phone: "+91 7742217724"
+  whatsapp_number: "+917742217724"
   location: "Rajasthan, India"
   message: "I'm always interested in new opportunities and exciting projects. Whether you want to discuss a potential collaboration or just say hello, feel free to reach out!"
   form_action: "https://formspree.io/f/your-form-id"  # Replace with your Formspree endpoint
