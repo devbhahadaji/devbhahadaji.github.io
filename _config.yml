@@ -7,8 +7,8 @@
 title: "Fullstack Web Developer & Software Engineer"
 name: "Shubham Bhahada"
 description: "Passionate fullstack developer creating innovative web solutions with modern technologies and best practices."
-url: "https://bhahadaji.github.io"
-baseurl: "/portfolio"
+url: "https://devbhahadaji.github.io"
+baseurl: "/"
 lang: "en"
 
 # Personal Information
@@ -132,91 +132,87 @@ skills:
 
 # Projects Section
 projects:
-  - title: "E-Commerce Platform"
-    description: "Full-stack e-commerce application with modern UI, secure payments, and admin dashboard. Built with React, Node.js, and MongoDB."
-    technologies: ["React", "Node.js", "MongoDB", "Stripe", "JWT"]
-    github_url: "https://github.com/yourusername/ecommerce-platform"
-    demo_url: "https://your-ecommerce-demo.vercel.app"
+  - title: "Learning Management System (LMS)"
+    description: "Full-featured Learning Management System built with Laravel supporting SCORM integration, multi-auth portals, quizzes, analytics, and eCommerce for paid courses."
+    technologies: ["Laravel", "PHP", "MySQL", "SCORM", "Bootstrap"]
+    github_url: "https://opexedu.com/"
+    demo_url: "https://www.sharp-haslett.168-119-8-226.plesk.page/newSite/"
     featured: true
     status: "completed"
 
-  - title: "Task Management App"
-    description: "Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features."
-    technologies: ["Vue.js", "Socket.io", "Express", "PostgreSQL"]
-    github_url: "https://github.com/yourusername/task-manager"
-    demo_url: "https://your-taskmanager-demo.netlify.app"
+  - title: "Rent-a-Lounge"
+    description: "Feature-rich eCommerce platform for booking and renting lounge spaces. Includes dynamic product variations, image cropping tool, booking calendar, and review system."
+    technologies: ["Laravel", "PHP", "MySQL", "JavaScript", "jQuery"]
+    github_url: "https://nsinfosoft.com/"
+    demo_url: "https://www.sharp-haslett.168-119-8-226.plesk.page/newSite/"
     featured: true
     status: "completed"
 
-  - title: "Weather Dashboard"
-    description: "Beautiful weather application with location-based forecasts, interactive maps, and historical weather data visualization."
-    technologies: ["JavaScript", "Chart.js", "Weather API", "Leaflet"]
-    github_url: "https://github.com/yourusername/weather-dashboard"
-    demo_url: "https://your-weather-app.github.io"
+  - title: "HDVowendo"
+    description: "Cross-platform logistics management app for vehicles and drivers with real-time tracking and QR code scanning, built using Flutter."
+    technologies: ["Flutter", "Dart", "REST APIs"]
+    github_url: "https://hdvowendo.com/"
+    demo_url: "https://hdvowendo.com/"
     featured: true
     status: "completed"
 
-  - title: "Social Media Analytics"
-    description: "Analytics dashboard for social media metrics with data visualization, automated reporting, and integration with multiple platforms."
-    technologies: ["Python", "Django", "D3.js", "REST APIs"]
-    github_url: "https://github.com/yourusername/social-analytics"
-    demo_url: "https://your-analytics-demo.herokuapp.com"
+  - title: "PartPal"
+    description: "Node.js-based digital ticketing platform with secure authentication, booking management, QR code ticket validation, and dynamic email notifications."
+    technologies: ["Node.js", "Express.js", "MongoDB", "JWT", "Nodemailer"]
+    github_url: "https://sumxinfotech.com/"
+    demo_url: "https://sumxinfotech.com/"
     featured: true
     status: "completed"
 
-  - title: "Portfolio Website"
-    description: "This responsive portfolio website built with Jekyll, featuring dynamic content management through _config.yaml and modern design."
-    technologies: ["Jekyll", "Sass", "JavaScript", "GitHub Pages"]
-    github_url: "https://github.com/devbhahadaji/portfolio"
-    demo_url: "https://devbhahadaji.github.io/portfolio"
+  - title: "Eparhawk"
+    description: "Task management and learning platform built with React and serverless Node.js on AWS Lambda, featuring real-time dashboards, multi-organization support, and KPI tracking."
+    technologies: ["React", "Node.js", "AWS Lambda", "MySQL", "S3"]
+    github_url: "https://eparhawk.com/"
+    demo_url: "https://eparhawk.com/"
     featured: true
-    status: "completed"
-
-  - title: "Recipe Finder App"
-    description: "Mobile-responsive recipe application with ingredient-based search, meal planning, and shopping list generation features."
-    technologies: ["React Native", "Firebase", "Recipe API"]
-    github_url: "https://github.com/yourusername/recipe-finder"
-    demo_url: "https://your-recipe-app.vercel.app"
-    featured: false
     status: "completed"
 
 # Experience Section
 experience:
-  - position: "Senior Full Stack Developer"
-    company: "Tech Solutions Inc."
-    duration: "2022 - Present"
-    description: "Lead development of enterprise web applications using modern tech stack. Mentor junior developers and architect scalable solutions."
+  - position: "Full Stack Developer"
+    company: "Nsinfosoft"
+    duration: "June 2024 – Present"
+    description: "Developing and maintaining advanced web applications using Laravel, React, and Flutter. Building scalable architectures and leading feature development across multiple client projects."
     achievements:
-      - "Improved application performance by 40% through optimization techniques"
-      - "Led a team of 5 developers on multiple high-impact projects"
-      - "Implemented CI/CD pipelines reducing deployment time by 60%"
+      - "Built a full-featured Learning Management System (LMS) with SCORM integration, multi-auth portals, quizzes, analytics, and eCommerce for paid courses."
+      - "Developed a feature-rich eCommerce platform (Rent-a-Lounge) with dynamic product variations, booking calendar, image cropping, and review system."
+      - "Created a Flutter-based mobile app (HDVowendo) for logistics and vehicle management with QR code scanning and driver assignment."
+      - "Enhanced UI/UX and integrated real-time dashboards to improve client engagement and operational efficiency."
 
   - position: "Full Stack Developer"
-    company: "Digital Agency Pro"
-    duration: "2020 - 2022"
-    description: "Developed responsive web applications for diverse clients ranging from startups to enterprise companies."
+    company: "Sumx Infotech"
+    duration: "Jan 2023 – April 2024"
+    description: "Worked on Node.js and React-based applications with a focus on scalability, performance, and real-time features. Designed RESTful APIs and implemented secure authentication systems."
     achievements:
-      - "Built 15+ client websites with 100% on-time delivery"
-      - "Introduced modern development practices improving team productivity"
-      - "Maintained 99.9% uptime for all deployed applications"
+      - "Developed RESTful APIs for a digital ticketing platform (PartPal) with booking management, seat allocation, and QR code ticket validation."
+      - "Created a React + Serverless Node.js task management and learning platform (Eparhawk) using AWS Lambda for multi-organization systems."
+      - "Implemented real-time analytics dashboards and optimized API performance for large data workloads."
+      - "Maintained code quality through modular architecture, logging, and testing."
 
-  - position: "Frontend Developer"
-    company: "Creative Web Studio"
-    duration: "2019 - 2020"
-    description: "Specialized in creating pixel-perfect, responsive user interfaces and improving user experience across web platforms."
+  - position: "Software Developer (Freelance / Independent)"
+    company: "Various Clients"
+    duration: "2021 – 2022"
+    description: "Delivered custom full-stack solutions for small businesses and startups using Laravel, Node.js, and React. Focused on building efficient, maintainable, and scalable systems."
     achievements:
-      - "Converted PSD designs to responsive HTML/CSS with 100% accuracy"
-      - "Improved website loading speed by 35% through optimization"
-      - "Collaborated with UX designers to enhance user experience"
+      - "Developed responsive business websites and custom CMS panels."
+      - "Integrated third-party APIs for payments, SMS, and authentication."
+      - "Delivered 10+ client projects with consistent positive feedback and timely completion."
+      - "Collaborated with designers and project managers to ensure seamless delivery."
 
   - position: "Junior Web Developer"
-    company: "StartUp Hub"
-    duration: "2018 - 2019"
-    description: "Started my career building websites and web applications while learning modern development practices and technologies."
+    company: "Freelance / Early Projects"
+    duration: "2019 – 2021"
+    description: "Started career by developing small-scale web applications while learning modern technologies including React, Node.js, and Laravel."
     achievements:
-      - "Developed 10+ websites using HTML, CSS, and JavaScript"
-      - "Learned React.js and Node.js to become a fullstack developer"
-      - "Contributed to open-source projects gaining community recognition"
+      - "Built portfolio and practice projects using HTML, CSS, JavaScript, and PHP."
+      - "Learned backend development with Node.js and Laravel frameworks."
+      - "Explored Flutter for cross-platform mobile app development."
+      - "Contributed to open-source and self-initiated learning projects."
 
 # Contact Section
 contact:
@@ -268,4 +264,4 @@ features:
   typed_text: true             # Typing animation for hero text
   smooth_scroll: true          # Smooth scrolling navigation
   back_to_top: true            # Back to top button
-  loading_screen: false        # Loading screen animation
+  loading_screen: true        # Loading screen animation
