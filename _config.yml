@@ -180,7 +180,8 @@ contact:
   whatsapp_number: "+917742217724"
   location: "Rajasthan, India"
   message: "I'm always interested in new opportunities and exciting projects. Whether you want to discuss a potential collaboration or just say hello, feel free to reach out!"
-  form_action: "https://bbsvp.in/ez_repair/ez-backend/public/api/contact-me"  # Replace with your Formspree endpoint
+  # form_action: "https://bbsvp.in/ez_repair/ez-backend/public/api/contact-me"
+  form_action: "https://formspree.io/f/xzzjjnzb"
 
 # Social Media Links
 social:
