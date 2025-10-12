@@ -222,9 +222,12 @@
 
       this.elements.projectCards.forEach(card => {
         const cardTech = card.getAttribute('data-tech') || '';
+
+        // Split by hyphen to get individual techs
         const techArray = cardTech
-          .split(' ')
-          .map(str => str.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-'));
+          .split('-')
+          .map(str => str.toLowerCase().trim());
+
         const shouldShow = filter === 'all' || techArray.includes(filter.toLowerCase());
 
         if (shouldShow) {
@@ -248,6 +251,7 @@
         }
       });
     }
+
 
     updateActiveButton(activeBtn) {
       this.elements.filterBtns.forEach(btn => btn.classList.remove('active'));
