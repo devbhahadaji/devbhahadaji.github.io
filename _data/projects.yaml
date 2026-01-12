@@ -36,6 +36,44 @@
         caption: "Course View"
       - image: "/assets/images/projects/lms/analytics.png"
         caption: "Analytics Dashboard"
+ 
+  - title: "Enterprise ERP System"
+    slug: "enterprise-erp-system"
+    description: "Industry-standard ERP system with inventory, procurement, and project management modules built using Laravel."
+    long_description: |
+      A fully modular and scalable ERP system designed to meet enterprise-grade business requirements. The platform includes core business modules such as Inventory Management, Procurement, and Project Management, following best practices in software architecture.
+      
+      The system is built with clean separation of concerns, role-based access control, reusable modules, and extensible workflows, making it suitable for long-term organizational use and future expansion.
+    technologies: ["Laravel", "PHP", "MySQL", "Bootstrap", "jQuery"]
+    github_url: "http://tractoweave.cloud/"
+    demo_url: "http://tractoweave.cloud/"
+    featured: true
+    status: "working on it"
+    project_type: "web"
+    category: "Enterprise Resource Planning (ERP)"
+    role: "Backend & Full Stack Developer"
+    duration: "Ongoing"
+    year: "2025"
+    features:
+      - "Inventory management with stock tracking"
+      - "Procurement and purchase workflows"
+      - "Project management with task tracking"
+      - "Role-based access control (RBAC)"
+      - "Modular and reusable architecture"
+      - "Audit logs and reporting"
+    challenges:
+      - title: "Scalable Modular Design"
+        solution: "Implemented module-based architecture with service layers and reusable components."
+      - title: "Enterprise Workflow Handling"
+        solution: "Designed configurable workflows adaptable to multiple business processes."
+    image: "/assets/images/projects/erp/featured.png"
+    gallery:
+      - image: "/assets/images/projects/erp/inventory.png"
+        caption: "Inventory Module"
+      - image: "/assets/images/projects/erp/procurement.png"
+        caption: "Procurement Module"
+      - image: "/assets/images/projects/erp/projects.png"
+        caption: "Project Management"
 
   - title: "Rent-a-Lounge"
     slug: "rent-a-lounge"
@@ -69,6 +107,47 @@
         caption: "Booking Calendar"
       - image: "/assets/images/projects/rent-lounge/product.png"
         caption: "Product Details"
+
+  - title: "Veda Chaksu"
+    slug: "veda-chaksu"
+    description: "End-to-end astrology and online Pandit booking platform with live Pandit tracking, daily horoscopes, and event-based pooja services."
+    long_description: |
+      Veda Chaksu is a comprehensive spiritual technology platform designed to bring traditional Vedic services into the digital ecosystem. The platform enables users to book Pandits online for various rituals, access daily horoscopes, and stay updated with upcoming religious events and special poojas.
+      
+      Built with a scalable Flutter mobile application and a robust Laravel backend, the system supports real-time Pandit location tracking, slot-based bookings, and service management. The platform follows modular architecture, reusable components, and industry-standard coding practices to ensure long-term scalability and maintainability.
+    technologies: ["Flutter", "Dart", "Laravel", "PHP", "MySQL", "REST APIs"]
+    github_url: ""
+    demo_url: ""
+    featured: true
+    status: "completed"
+    project_type: "app"
+    category: "Spiritual & Service Platform"
+    role: "Full Stack & Mobile App Developer"
+    duration: "4 months"
+    year: "2024"
+    features:
+      - "Online Pandit booking with date & time slots"
+      - "Live Pandit location tracking"
+      - "Daily horoscope and astrology content"
+      - "Upcoming poojas and religious events management"
+      - "User profiles and booking history"
+      - "Admin panel for Pandit, service & content management"
+      - "Scalable API architecture with secure authentication"
+    challenges:
+      - title: "Real-time Pandit Tracking"
+        solution: "Implemented location-based tracking using optimized API polling and structured location updates."
+      - title: "Modular Service Management"
+        solution: "Designed reusable service and booking modules to support multiple pooja types and future expansions."
+    image: "/assets/images/projects/veda-chaksu/featured.jpeg"
+    gallery:
+      - image: "/assets/images/projects/veda-chaksu/home.jpeg"
+        caption: "Home & Horoscope Dashboard"
+      - image: "/assets/images/projects/veda-chaksu/booking.jpeg"
+        caption: "Poja Details & Booking"
+      - image: "/assets/images/projects/veda-chaksu/settings.jpeg"
+        caption: "User Profile & Settings"
+      - image: "/assets/images/projects/veda-chaksu/tracking.jpeg"
+        caption: "Live Pandit Tracking"
 
   - title: "HDVowendo"
     slug: "hdvowendo"
@@ -210,3 +289,91 @@
         caption: "Mobile App Booking"
         type: "portrait"
 
+  - title: "ALTPORT"
+    slug: "altport"
+    description: "Stock analytics and comparison platform providing historical performance, growth insights, and investment analysis similar to leading stock apps."
+    long_description: |
+      ALTPORT is a data-driven stock analytics platform that allows users to explore, analyze, and compare stock performance over time. The platform presents detailed historical trends, growth metrics, and comparative insights in a user-friendly mobile interface.
+      
+      Built with Flutter for cross-platform performance and Laravel for backend data processing, ALTPORT focuses on accuracy, performance optimization, and clean UI/UX inspired by industry-leading financial applications.
+    technologies: ["Flutter", "Laravel", "PHP", "MySQL", "REST APIs"]
+    github_url: "https://altport.com/"
+    demo_url: "https://altport.com/"
+    featured: true
+    status: "completed"
+    project_type: "app"
+    category: "FinTech / Stock Analytics"
+    role: "Full Stack & Mobile App Developer"
+    duration: "3 months"
+    year: "2024"
+    features:
+      - "Historical stock performance visualization"
+      - "Stock growth and trend analysis"
+      - "Side-by-side stock comparison"
+      - "Clean and intuitive financial UI"
+      - "Optimized APIs for high-performance data delivery"
+      - "Scalable backend architecture"
+    challenges:
+      - title: "Financial Data Representation"
+        solution: "Designed optimized data structures and reusable chart components for smooth performance."
+      - title: "Comparison Engine"
+        solution: "Built a flexible comparison module supporting multiple stocks and metrics."
+    image: "/assets/images/projects/altport/featured.jpeg"
+    gallery:
+      - image: "/assets/images/projects/altport/dashboard.jpeg"
+        caption: "Stock Overview Dashboard"
+      - image: "/assets/images/projects/altport/compare_1.jpeg"
+        caption: "Comparison Functionality"
+      - image: "/assets/images/projects/altport/compare_2.jpeg"
+        caption: "Detailed Stock Comparison"
+      - image: "/assets/images/projects/altport/detail_1.jpeg"
+        caption: "Stock Details View"
+      - image: "/assets/images/projects/altport/detail_2.jpeg"
+        caption: "Company and Founder Info"
+ 
+  - title: "Tractor Service Management System"
+    slug: "tractor-service-management"
+    description: "Custom-built tractor service and customer management app designed for a real-world rural business use case."
+    long_description: |
+      This Tractor Service Management System is a purpose-built mobile application developed for managing a family-owned tractor service business. The system simplifies customer management, service tracking, village-based operations, and financial accounting.
+      
+      The application emphasizes usability for non-technical users, offering an intuitive interface, automated booking through incoming calls, and clear visibility of dues and balances. The system follows modular design principles with reusable components and scalable backend APIs.
+    technologies: ["Flutter", "Laravel", "PHP", "MySQL", "REST APIs"]
+    github_url: ""
+    demo_url: ""
+    featured: true
+    status: "completed"
+    project_type: "app"
+    category: "Business Management System"
+    role: "Full Stack & Mobile App Developer"
+    duration: "2 months"
+    year: "2024"
+    features:
+      - "Customer account and balance management"
+      - "Village-wise service tracking"
+      - "Tractor service history and usage logs"
+      - "Automatic booking via incoming calls"
+      - "Dues and payment tracking"
+      - "Simple and user-friendly interface"
+      - "Offline-friendly architecture"
+    challenges:
+      - title: "Non-Technical User Experience"
+        solution: "Designed a minimal UI with simple workflows tailored for rural business operations."
+      - title: "Auto Booking via Calls"
+        solution: "Integrated call-based triggers mapped to customer and service records."
+    image: "/assets/images/projects/tractor-service/featured.jpg"
+    gallery:
+      - image: "/assets/images/projects/tractor-service/dashboard.jpg"
+        caption: "Dashboard"
+      - image: "/assets/images/projects/tractor-service/service.jpg"
+        caption: "Service Records"
+      - image: "/assets/images/projects/tractor-service/report.jpg"
+        caption: "Financial Reports"
+      - image: "/assets/images/projects/tractor-service/customers.jpg"
+        caption: "Customer Management"
+      - image: "/assets/images/projects/tractor-service/bookings.jpg"
+        caption: "Booking Interface"
+      - image: "/assets/images/projects/tractor-service/settings_1.jpg"
+        caption: "Settings & Configurations"
+      - image: "/assets/images/projects/tractor-service/settings_2.jpg"
+        caption: "Settings & Configurations"
