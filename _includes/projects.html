@@ -27,6 +27,8 @@
       {% assign tech_classes = tech_classes | append: tech | downcase | replace: ".", "" | replace: " ", "-" %}
       {% unless forloop.last %}{% assign tech_classes = tech_classes | append: " " %}{% endunless %}
       {% endfor %}
+      
+      {% assign project_page = site.projects | where: "slug", project.slug | first %}
 
       <div class="project-card animate-on-scroll" data-tech="{{ tech_classes }}">
         <div class="project-image">
@@ -40,6 +42,11 @@
           {% endif %}
           <div class="project-overlay">
             <div class="project-links">
+              {% if project_page %}
+              <a href="{{ project_page.url | relative_url }}" class="project-link" aria-label="View project details">
+                <i class="fas fa-info-circle"></i>
+              </a>
+              {% endif %}
               {% if project.demo_url %}
               <a href="{{ project.demo_url }}" target="_blank" class="project-link" aria-label="View live demo">
                 <i class="fas fa-external-link-alt"></i>
@@ -63,11 +70,23 @@
             {% endfor %}
           </div>
           {% endif %}
-          {% if project.status %}
-          <div class="project-status">
-            <span class="status-badge status-{{ project.status }}">{{ project.status | capitalize }}</span>
+          <div class="project-footer">
+            {% if project.status %}
+            <span class="status-badge status-{{ project.status | slugify }}">
+              {% if project.status == "completed" %}
+              <i class="fas fa-check-circle"></i>
+              {% elsif project.status == "working on it" %}
+              <i class="fas fa-spinner fa-spin"></i>
+              {% endif %}
+              {{ project.status | capitalize }}
+            </span>
+            {% endif %}
+            {% if project_page %}
+            <a href="{{ project_page.url | relative_url }}" class="view-details-link">
+              View Details <i class="fas fa-arrow-right"></i>
+            </a>
+            {% endif %}
           </div>
-          {% endif %}
         </div>
       </div>
       {% endfor %}

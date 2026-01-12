@@ -1,0 +1,373 @@
+---
+layout: default
+---
+
+<!-- Project Detail Page -->
+<main class="project-detail-page">
+  <!-- Project Hero Section -->
+  <section class="project-hero">
+    <div class="container">
+      <a href="/#projects" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to Projects
+      </a>
+      
+      <div class="project-hero-content">
+        <div class="project-hero-text">
+          <h1 class="project-hero-title">{{ page.title }}</h1>
+          <p class="project-hero-description">{{ page.description }}</p>
+          
+          {% if page.technologies %}
+          <div class="project-hero-tech">
+            {% for tech in page.technologies %}
+            <span class="tech-tag-large">{{ tech }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+          
+          <div class="project-hero-buttons">
+            {% if page.demo_url %}
+            <a href="{{ page.demo_url }}" target="_blank" class="btn btn-primary">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            {% endif %}
+            {% if page.github_url %}
+            <a href="{{ page.github_url }}" target="_blank" class="btn btn-secondary">
+              <i class="fab fa-github"></i> View Code
+            </a>
+            {% endif %}
+          </div>
+          
+          {% if page.status %}
+          <div class="project-hero-status">
+            <span class="status-badge-large status-{{ page.status | slugify }}">
+              {% if page.status == "completed" %}
+              <i class="fas fa-check-circle"></i>
+              {% elsif page.status == "in-progress" or page.status == "working on it" %}
+              <i class="fas fa-spinner"></i>
+              {% else %}
+              <i class="fas fa-clock"></i>
+              {% endif %}
+              {{ page.status | capitalize }}
+            </span>
+          </div>
+          {% endif %}
+        </div>
+        
+        <div class="project-hero-image">
+          {% if page.featured_image %}
+          <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}" class="featured-image">
+          {% elsif page.image %}
+          <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="featured-image">
+          {% else %}
+          <div class="project-placeholder-large">
+            <i class="fas fa-laptop-code"></i>
+            <span>{{ page.title }}</span>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Details Section -->
+  <section class="project-details">
+    <div class="container">
+      <div class="project-details-grid">
+        <!-- Main Content -->
+        <div class="project-main-content">
+          {% if page.long_description or content != "" %}
+          <div class="project-section animate-on-scroll">
+            <h2><i class="fas fa-info-circle"></i> About This Project</h2>
+            <div class="project-about-text">
+              {% if page.long_description %}
+              {{ page.long_description | markdownify }}
+              {% else %}
+              {{ content }}
+              {% endif %}
+            </div>
+          </div>
+          {% endif %}
+
+          {% if page.features %}
+          <div class="project-section animate-on-scroll">
+            <h2><i class="fas fa-star"></i> Key Features</h2>
+            <ul class="features-list">
+              {% for feature in page.features %}
+              <li>
+                <i class="fas fa-check"></i>
+                <span>{{ feature }}</span>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+
+          {% if page.challenges %}
+          <div class="project-section animate-on-scroll">
+            <h2><i class="fas fa-puzzle-piece"></i> Challenges & Solutions</h2>
+            <div class="challenges-list">
+              {% for challenge in page.challenges %}
+              <div class="challenge-item">
+                <h4>{{ challenge.title }}</h4>
+                <p>{{ challenge.solution }}</p>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="project-sidebar">
+          <div class="sidebar-card animate-on-scroll">
+            <h3><i class="fas fa-cogs"></i> Tech Stack</h3>
+            <div class="sidebar-tech-list">
+              {% for tech in page.technologies %}
+              <span class="sidebar-tech-tag">{{ tech }}</span>
+              {% endfor %}
+            </div>
+          </div>
+
+          {% if page.role %}
+          <div class="sidebar-card animate-on-scroll">
+            <h3><i class="fas fa-user"></i> My Role</h3>
+            <p>{{ page.role }}</p>
+          </div>
+          {% endif %}
+
+          {% if page.duration %}
+          <div class="sidebar-card animate-on-scroll">
+            <h3><i class="fas fa-calendar-alt"></i> Duration</h3>
+            <p>{{ page.duration }}</p>
+          </div>
+          {% endif %}
+
+          {% if page.client %}
+          <div class="sidebar-card animate-on-scroll">
+            <h3><i class="fas fa-building"></i> Client</h3>
+            <p>{{ page.client }}</p>
+          </div>
+          {% endif %}
+
+          {% if page.year %}
+          <div class="sidebar-card animate-on-scroll">
+            <h3><i class="fas fa-calendar"></i> Year</h3>
+            <p>{{ page.year }}</p>
+          </div>
+          {% endif %}
+
+          {% if page.category %}
+          <div class="sidebar-card animate-on-scroll">
+            <h3><i class="fas fa-folder"></i> Category</h3>
+            <p>{{ page.category }}</p>
+          </div>
+          {% endif %}
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Gallery Section -->
+  {% if page.gallery %}
+  <section class="project-gallery">
+    <div class="container">
+      <h2 class="gallery-title animate-on-scroll">
+        <i class="fas fa-images"></i> Project Gallery
+      </h2>
+      
+      <!-- Gallery Type Selector for App Screenshots -->
+      {% if page.project_type == "app" or page.project_type == "mobile" %}
+      <div class="gallery-type-indicator animate-on-scroll">
+        <span class="gallery-type-badge">
+          <i class="fas fa-mobile-alt"></i> Mobile App Screenshots
+        </span>
+      </div>
+      {% endif %}
+      
+      <div class="gallery-grid {% if page.project_type == 'app' or page.project_type == 'mobile' %}gallery-app{% endif %} animate-on-scroll">
+        {% for item in page.gallery %}
+        <div class="gallery-item {% if item.type == 'portrait' or page.project_type == 'app' or page.project_type == 'mobile' %}gallery-portrait{% endif %}" data-caption="{{ item.caption | default: page.title }}">
+          <div class="gallery-image-wrapper">
+            <img src="{{ item.image | relative_url }}" alt="{{ item.caption | default: page.title }}" loading="lazy">
+            <div class="gallery-overlay">
+              <button class="gallery-zoom" aria-label="View full size">
+                <i class="fas fa-search-plus"></i>
+              </button>
+              {% if item.caption %}
+              <span class="gallery-caption">{{ item.caption }}</span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Video Section -->
+  {% if page.video_url %}
+  <section class="project-video">
+    <div class="container">
+      <h2 class="video-title animate-on-scroll">
+        <i class="fas fa-play-circle"></i> Project Demo
+      </h2>
+      <div class="video-wrapper animate-on-scroll">
+        <iframe 
+          src="{{ page.video_url }}" 
+          title="{{ page.title }} Demo Video"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Related Projects Section -->
+  {% if page.related_projects %}
+  <section class="related-projects">
+    <div class="container">
+      <h2 class="related-title animate-on-scroll">
+        <i class="fas fa-folder-open"></i> Related Projects
+      </h2>
+      <div class="related-grid">
+        {% for related_slug in page.related_projects %}
+        {% assign related = site.projects | where: "slug", related_slug | first %}
+        {% if related %}
+        <a href="{{ related.url | relative_url }}" class="related-card animate-on-scroll">
+          <div class="related-image">
+            {% if related.image %}
+            <img src="{{ related.image | relative_url }}" alt="{{ related.title }}">
+            {% else %}
+            <div class="related-placeholder">
+              <i class="fas fa-code"></i>
+            </div>
+            {% endif %}
+          </div>
+          <div class="related-content">
+            <h4>{{ related.title }}</h4>
+            <p>{{ related.description | truncate: 80 }}</p>
+          </div>
+        </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Call to Action -->
+  <section class="project-cta">
+    <div class="container">
+      <div class="cta-content animate-on-scroll">
+        <h2>Interested in working together?</h2>
+        <p>Let's discuss your project and bring your ideas to life.</p>
+        <div class="cta-buttons">
+          <a href="/#contact" class="btn btn-primary">
+            <i class="fas fa-envelope"></i> Get In Touch
+          </a>
+          <a href="/#projects" class="btn btn-secondary">
+            <i class="fas fa-folder"></i> View All Projects
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox">
+  <button class="lightbox-close" aria-label="Close lightbox">
+    <i class="fas fa-times"></i>
+  </button>
+  <button class="lightbox-prev" aria-label="Previous image">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <button class="lightbox-next" aria-label="Next image">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+  <div class="lightbox-content">
+    <img src="" alt="" id="lightbox-image">
+    <p class="lightbox-caption"></p>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Lightbox functionality
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightbox-image');
+  const lightboxCaption = document.querySelector('.lightbox-caption');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  let currentIndex = 0;
+
+  function openLightbox(index) {
+    currentIndex = index;
+    const item = galleryItems[index];
+    const img = item.querySelector('img');
+    const caption = item.dataset.caption;
+    
+    lightboxImage.src = img.src;
+    lightboxImage.alt = img.alt;
+    lightboxCaption.textContent = caption || '';
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % galleryItems.length;
+    openLightbox(currentIndex);
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+    openLightbox(currentIndex);
+  }
+
+  galleryItems.forEach((item, index) => {
+    const zoomBtn = item.querySelector('.gallery-zoom');
+    if (zoomBtn) {
+      zoomBtn.addEventListener('click', () => openLightbox(index));
+    }
+    item.addEventListener('click', (e) => {
+      if (!e.target.closest('.gallery-zoom')) {
+        openLightbox(index);
+      }
+    });
+  });
+
+  document.querySelector('.lightbox-close')?.addEventListener('click', closeLightbox);
+  document.querySelector('.lightbox-next')?.addEventListener('click', nextImage);
+  document.querySelector('.lightbox-prev')?.addEventListener('click', prevImage);
+
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'ArrowLeft') prevImage();
+  });
+
+  // Animate on scroll
+  const animateElements = document.querySelectorAll('.animate-on-scroll');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  animateElements.forEach(el => observer.observe(el));
+});
+</script>

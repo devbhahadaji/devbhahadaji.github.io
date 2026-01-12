@@ -1,48 +1,212 @@
   - title: "Learning Management System (LMS)"
+    slug: "learning-management-system"
     description: "Full-featured Learning Management System built with Laravel supporting SCORM integration, multi-auth portals, quizzes, analytics, and eCommerce for paid courses."
+    long_description: |
+      A comprehensive Learning Management System designed to revolutionize online education. This platform enables institutions and educators to create, manage, and deliver courses with rich multimedia content.
+      
+      The system features a robust multi-tenant architecture supporting multiple organizations, with separate portals for administrators, instructors, and students. SCORM compliance ensures compatibility with industry-standard e-learning content.
     technologies: ["Laravel", "PHP", "MySQL", "SCORM", "Bootstrap"]
     github_url: "https://opexedu.com/"
     demo_url: "https://opexedu.com/"
     featured: true
     status: "completed"
+    project_type: "web"
+    category: "E-Learning Platform"
+    role: "Full Stack Developer"
+    duration: "4 months"
+    year: "2024"
+    features:
+      - "SCORM 1.2 & 2004 compliant content support"
+      - "Multi-organization portal with separate dashboards"
+      - "Interactive quizzes with auto-grading"
+      - "Real-time analytics and progress tracking"
+      - "eCommerce integration for paid courses"
+      - "Certificate generation upon course completion"
+      - "Discussion forums and messaging system"
+    challenges:
+      - title: "SCORM Integration"
+        solution: "Implemented a custom SCORM player that handles content tracking, bookmarking, and completion status synchronization with the LMS database."
+      - title: "Multi-tenant Architecture"
+        solution: "Designed a scalable database schema with tenant isolation, allowing each organization to have customized branding and settings."
+    image: "/assets/images/projects/lms/featured.png"
+    gallery:
+      - image: "/assets/images/projects/lms/dashboard.png"
+        caption: "Admin Dashboard"
+      - image: "/assets/images/projects/lms/course-view.png"
+        caption: "Course View"
+      - image: "/assets/images/projects/lms/analytics.png"
+        caption: "Analytics Dashboard"
 
   - title: "Rent-a-Lounge"
+    slug: "rent-a-lounge"
     description: "Feature-rich eCommerce platform for booking and renting lounge spaces. Includes dynamic product variations, image cropping tool, booking calendar, and review system."
+    long_description: |
+      An innovative eCommerce platform tailored for the event and hospitality industry. Rent-a-Lounge allows users to browse, compare, and book premium lounge spaces for various occasions.
+      
+      The platform features an intuitive booking calendar, real-time availability checking, and a comprehensive review system that helps users make informed decisions.
     technologies: ["Laravel", "PHP", "MySQL", "JavaScript", "jQuery"]
     github_url: "https://www.sharp-haslett.168-119-8-226.plesk.page/newSite/"
     demo_url: "https://www.sharp-haslett.168-119-8-226.plesk.page/newSite/"
     featured: true
     status: "completed"
+    project_type: "web"
+    category: "eCommerce Platform"
+    role: "Full Stack Developer"
+    duration: "3 months"
+    year: "2024"
+    features:
+      - "Dynamic product variations with pricing"
+      - "Interactive booking calendar with availability"
+      - "Image cropping and gallery management"
+      - "Customer review and rating system"
+      - "Secure payment gateway integration"
+      - "Admin dashboard for inventory management"
+    image: "/assets/images/projects/rent-lounge/featured.png"
+    gallery:
+      - image: "/assets/images/projects/rent-lounge/home.png"
+        caption: "Homepage"
+      - image: "/assets/images/projects/rent-lounge/booking.png"
+        caption: "Booking Calendar"
+      - image: "/assets/images/projects/rent-lounge/product.png"
+        caption: "Product Details"
 
   - title: "HDVowendo"
+    slug: "hdvowendo"
     description: "Cross-platform logistics management app for vehicles and drivers with real-time tracking and QR code scanning, built using Flutter."
+    long_description: |
+      A comprehensive logistics management mobile application designed to streamline fleet operations. HDVowendo enables real-time tracking of vehicles and drivers, ensuring efficient delivery management.
+      
+      The app features QR code scanning for quick package verification, GPS-based route optimization, and detailed reporting for fleet managers.
     technologies: ["Flutter", "Dart", "REST APIs"]
     github_url: "https://hdvowendo.com/"
     demo_url: "https://hdvowendo.com/"
     featured: true
     status: "completed"
+    project_type: "app"
+    category: "Mobile Application"
+    role: "Mobile App Developer"
+    duration: "3 months"
+    year: "2024"
+    features:
+      - "Real-time GPS vehicle tracking"
+      - "QR code scanning for package verification"
+      - "Driver assignment and scheduling"
+      - "Route optimization algorithms"
+      - "Push notifications for updates"
+      - "Offline mode support"
+    image: "/assets/images/projects/hdvowendo/featured.png"
+    gallery:
+      - image: "/assets/images/projects/hdvowendo/home.png"
+        caption: "Home Screen"
+        type: "portrait"
+      - image: "/assets/images/projects/hdvowendo/tracking.png"
+        caption: "Vehicle Tracking"
+        type: "portrait"
+      - image: "/assets/images/projects/hdvowendo/scan.png"
+        caption: "QR Scanner"
+        type: "portrait"
+      - image: "/assets/images/projects/hdvowendo/profile.png"
+        caption: "Driver Profile"
+        type: "portrait"
 
   - title: "PartPal"
-    description: "Node.js-based digital ticketing platform with secure authentication, booking management, QR code ticket validation, and dynamic email notifications. only APIs"
-    technologies: ["Node.js", "Express.js", "MongoDB", "JWT", "Nodemailer","Rest APIs"]
-    # github_url: "https://sumxinfotech.com/"
-    # demo_url: "https://sumxinfotech.com/"
+    slug: "partpal"
+    description: "Node.js-based digital ticketing platform with secure authentication, booking management, QR code ticket validation, and dynamic email notifications. Only APIs"
+    long_description: |
+      A robust backend API system for digital ticketing and event management. PartPal provides a complete solution for event organizers to manage ticket sales, validate entries, and communicate with attendees.
+      
+      Built with scalability in mind, the API handles high-volume ticket sales with secure JWT authentication and real-time QR code validation.
+    technologies: ["Node.js", "Express.js", "MongoDB", "JWT", "Nodemailer", "REST APIs"]
+    github_url: "https://sumxinfotech.com/"
+    demo_url: "https://sumxinfotech.com/"
     featured: true
     status: "completed"
+    project_type: "web"
+    category: "Backend API"
+    role: "Backend Developer"
+    duration: "2 months"
+    year: "2024"
+    features:
+      - "Secure JWT-based authentication"
+      - "QR code ticket generation and validation"
+      - "Dynamic email notifications with templates"
+      - "Booking management system"
+      - "Analytics and reporting endpoints"
+      - "Rate limiting and security middleware"
+    image: "/assets/images/projects/partpal/featured.png"
+    gallery:
+      - image: "/assets/images/projects/partpal/api-docs.png"
+        caption: "API Documentation"
+      - image: "/assets/images/projects/partpal/architecture.png"
+        caption: "System Architecture"
 
   - title: "Eparhawk"
+    slug: "eparhawk"
     description: "Task management and learning platform built with React and serverless Node.js on AWS Lambda, featuring real-time dashboards, multi-organization support, and KPI tracking."
+    long_description: |
+      A sophisticated enterprise task management and learning platform designed for organizations to track employee performance and skill development. Eparhawk combines task management with learning modules for comprehensive workforce development.
+      
+      The serverless architecture ensures high availability and cost efficiency, while the React frontend delivers a responsive and intuitive user experience.
     technologies: ["React", "Node.js", "AWS Lambda", "MySQL", "S3"]
     github_url: "https://eparhawk.com/"
     demo_url: "https://eparhawk.com/"
     featured: true
     status: "completed"
+    project_type: "web"
+    category: "Enterprise Platform"
+    role: "Full Stack Developer"
+    duration: "5 months"
+    year: "2024"
+    features:
+      - "Real-time performance dashboards"
+      - "Multi-organization support"
+      - "KPI tracking and reporting"
+      - "Learning module integration"
+      - "Serverless AWS Lambda functions"
+      - "File storage with S3"
+    image: "/assets/images/projects/eparhawk/featured.png"
+    gallery:
+      - image: "/assets/images/projects/eparhawk/dashboard.png"
+        caption: "Main Dashboard"
+      - image: "/assets/images/projects/eparhawk/tasks.png"
+        caption: "Task Management"
+      - image: "/assets/images/projects/eparhawk/reports.png"
+        caption: "Reports & Analytics"
 
   - title: "Hire And Fyre"
-    description: "UAE-based Heavy Machinery rental platform with dynamic pricing, booking management, and user reviews, built using Laravel. and React for frontend also building app in Flutter"
-    technologies: ["React","Flutter","Tailwind CSS","TypeScript","Laravel", "PHP", "MySQL"]
+    slug: "hire-and-fyre"
+    description: "UAE-based Heavy Machinery rental platform with dynamic pricing, booking management, and user reviews, built using Laravel. And React for frontend also building app in Flutter"
+    long_description: |
+      A comprehensive marketplace platform for heavy machinery rental in the UAE market. Hire And Fyre connects equipment owners with construction companies and contractors who need temporary access to heavy machinery.
+      
+      The platform features dynamic pricing based on rental duration, real-time availability tracking, and a robust review system to ensure quality service.
+    technologies: ["React", "Flutter", "Tailwind CSS", "TypeScript", "Laravel", "PHP", "MySQL"]
     github_url: "https://hireandfyre.com/"
     demo_url: "https://hireandfyre.com/"
     featured: true
     status: "working on it"
-  
+    project_type: "web"
+    category: "Marketplace Platform"
+    role: "Full Stack Developer"
+    duration: "Ongoing"
+    year: "2025"
+    features:
+      - "Dynamic pricing algorithms"
+      - "Real-time availability calendar"
+      - "Multi-platform (Web + Mobile)"
+      - "User verification system"
+      - "Review and rating system"
+      - "Secure payment processing"
+    image: "/assets/images/projects/hire-fyre/featured.png"
+    gallery:
+      - image: "/assets/images/projects/hire-fyre/home.png"
+        caption: "Homepage"
+      - image: "/assets/images/projects/hire-fyre/listing.png"
+        caption: "Equipment Listing"
+      - image: "/assets/images/projects/hire-fyre/app-home.png"
+        caption: "Mobile App Home"
+        type: "portrait"
+      - image: "/assets/images/projects/hire-fyre/app-booking.png"
+        caption: "Mobile App Booking"
+        type: "portrait"
+
