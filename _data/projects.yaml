@@ -338,7 +338,7 @@
       This Tractor Service Management System is a purpose-built mobile application developed for managing a family-owned tractor service business. The system simplifies customer management, service tracking, village-based operations, and financial accounting.
       
       The application emphasizes usability for non-technical users, offering an intuitive interface, automated booking through incoming calls, and clear visibility of dues and balances. The system follows modular design principles with reusable components and scalable backend APIs.
-    technologies: ["Flutter", "Laravel", "PHP", "MySQL", "REST APIs"]
+    technologies: ["Flutter", "Node.js", "JavaScript", "MySQL", "REST APIs"]
     github_url: ""
     demo_url: ""
     featured: true
