@@ -1,0 +1,49 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>{{ site.url }}</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>{{ site.profile_image | absolute_url }}</image:loc>
+      <image:title>{{ site.name }} - Full Stack Developer Jaipur</image:title>
+      <image:caption>Shubham Bhahada - Full Stack Web Developer from Jaipur, Rajasthan, India</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Thank You Page -->
+  <url>
+    <loc>{{ site.url }}/thank-you</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Project Pages -->
+  {% for project in site.projects %}
+  <url>
+    <loc>{{ project.url | absolute_url }}</loc>
+    <lastmod>{{ project.date | default: site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    {% if project.image %}
+    <image:image>
+      <image:loc>{{ project.image | absolute_url }}</image:loc>
+      <image:title>{{ project.title }} - Project by {{ site.name }}</image:title>
+      <image:caption>{{ project.description | default: project.title }}</image:caption>
+    </image:image>
+    {% endif %}
+  </url>
+  {% endfor %}
+  
+</urlset>

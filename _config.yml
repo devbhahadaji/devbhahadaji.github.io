@@ -4,21 +4,36 @@
 # ===================================================================
 
 # Site Settings
-title: "Fullstack Web Developer & Software Engineer"
+title: "Shubham Bhahada | Full Stack Web Developer in Jaipur, Rajasthan"
 name: "Shubham Bhahada"
-description: "Passionate fullstack developer creating innovative web solutions with modern technologies and best practices."
+description: "Shubham Bhahada is a passionate Full Stack Web Developer from Jaipur, Rajasthan, India. Expert in React, Node.js, Laravel, Python & modern web technologies. Hire a skilled software engineer for your next project."
 url: "https://devbhahadaji.github.io"
-baseurl: "/"
-lang: "en"
+baseurl: ""
+lang: "en-IN"
 
 # Personal Information
 email: "shubhamchoudhary18062002@gmail.com"
 profile_image: "/assets/images/profile.jpeg"
 
+# Location for Local SEO
+location:
+  city: "Jaipur"
+  state: "Rajasthan"
+  country: "India"
+  country_code: "IN"
+
 # SEO and Analytics
-google_analytics: "" # Add your Google Analytics ID here
+google_analytics: "G-7XP3R4M39Q" # Add your Google Analytics ID here
+google_site_verification: "" # Add your Google Search Console verification code
+bing_site_verification: "" # Add your Bing Webmaster verification code
 author: "Shubham Bhahada"
-keywords: "fullstack developer, web developer, software engineer, React, Node.js, Python, JavaScript"
+keywords: "Full Stack Developer Jaipur, Web Developer Rajasthan, Software Engineer India, React Developer Jaipur, Node.js Developer, Laravel Developer India, Python Developer Jaipur, Freelance Web Developer Rajasthan, Hire Web Developer Jaipur, Frontend Developer India, Backend Developer Jaipur, MERN Stack Developer, PHP Developer Rajasthan, JavaScript Developer, Mobile App Developer Jaipur, Flutter Developer India"
+
+# Additional SEO Settings
+tagline: "Building Digital Solutions from Jaipur, India"
+twitter_username: "iamshubhamja8"
+github_username: "shubhambhahada"
+linkedin_username: "shubham-bhahada-777048220"
 
 # Build Settings
 markdown: kramdown
@@ -106,21 +121,21 @@ skills:
       - "Laravel"
       - "REST APIs"
       # - "GraphQL"
-      # - "Socket.io"
+      - "Socket.io"
 
   - category: "Database"
     items:
       - "MongoDB"
       # - "PostgreSQL"
       - "MySQL"
-      # - "Redis"
+      - "Redis"
       - "Firebase"
       # - "Supabase"
 
   - category: "DevOps & Tools"
     items:
       - "Git & GitHub"
-      # - "Docker"
+      - "Docker"
       - "AWS"
       # - "Vercel"
       # - "Netlify"
@@ -135,50 +150,83 @@ skills:
 experience:
   - position: "Full Stack Developer"
     company: "Nsinfosoft"
+    company_url: "https://nsinfosoft.com"
     duration: "June 2024 – Present"
+    location: "Jaipur, Rajasthan, India"
     description: "Developing and maintaining advanced web applications using Laravel, React, and Flutter. Building scalable architectures and leading feature development across multiple client projects."
     achievements:
       - "Built a full-featured Learning Management System (LMS) with SCORM integration, multi-auth portals, quizzes, analytics, and eCommerce for paid courses."
       - "Developed a feature-rich eCommerce platform (Rent-a-Lounge) with dynamic product variations, booking calendar, image cropping, and review system."
       - "Created a Flutter-based mobile app (HDVowendo) for logistics and vehicle management with QR code scanning and driver assignment."
       - "Enhanced UI/UX and integrated real-time dashboards to improve client engagement and operational efficiency."
+    technologies:
+      - "Laravel"
+      - "React"
+      - "Flutter"
+      - "MySQL"
+      - "REST APIs"
 
   - position: "Full Stack Developer"
     company: "Sumx Infotech"
+    company_url: "https://sumxinfotech.in"
     duration: "Jan 2023 – April 2024"
+    location: "Jaipur, Rajasthan, India"
     description: "Worked on Node.js and React-based applications with a focus on scalability, performance, and real-time features. Designed RESTful APIs and implemented secure authentication systems."
     achievements:
       - "Developed RESTful APIs for a digital ticketing platform (PartPal) with booking management, seat allocation, and QR code ticket validation."
       - "Created a React + Serverless Node.js task management and learning platform (Eparhawk) using AWS Lambda for multi-organization systems."
       - "Implemented real-time analytics dashboards and optimized API performance for large data workloads."
       - "Maintained code quality through modular architecture, logging, and testing."
+    technologies:
+      - "Node.js"
+      - "React"
+      - "AWS Lambda"
+      - "MongoDB"
+      - "REST APIs"
 
   - position: "Software Developer (Freelance / Independent)"
     company: "Various Clients"
+    company_url: ""
     duration: "2021 – 2022"
+    location: "Jaipur, Rajasthan, India"
     description: "Delivered custom full-stack solutions for small businesses and startups using Laravel, Node.js, and React. Focused on building efficient, maintainable, and scalable systems."
     achievements:
       - "Developed responsive business websites and custom CMS panels."
       - "Integrated third-party APIs for payments, SMS, and authentication."
       - "Delivered 10+ client projects with consistent positive feedback and timely completion."
       - "Collaborated with designers and project managers to ensure seamless delivery."
+    technologies:
+      - "Laravel"
+      - "Node.js"
+      - "React"
+      - "MySQL"
+      - "PHP"
 
   - position: "Junior Web Developer"
     company: "Freelance / Early Projects"
+    company_url: ""
     duration: "2019 – 2021"
+    location: "Jaipur, Rajasthan, India"
     description: "Started career by developing small-scale web applications while learning modern technologies including React, Node.js, and Laravel."
     achievements:
       - "Built portfolio and practice projects using HTML, CSS, JavaScript, and PHP."
       - "Learned backend development with Node.js and Laravel frameworks."
       - "Explored Flutter for cross-platform mobile app development."
       - "Contributed to open-source and self-initiated learning projects."
+    technologies:
+      - "HTML/CSS"
+      - "JavaScript"
+      - "PHP"
+      - "React"
+      - "Node.js"
 
 # Contact Section
 contact:
   email: "shubhamchoudhary18062002@gmail.com"
   phone: "+91 7742217724"
   whatsapp_number: "+917742217724"
-  location: "Rajasthan, India"
+  location: "Jaipur, Rajasthan, India"
+  address: "Jaipur, Rajasthan 302001, India"
   message: "I'm always interested in new opportunities and exciting projects. Whether you want to discuss a potential collaboration or just say hello, feel free to reach out!"
   # form_action: "https://bbsvp.in/ez_repair/ez-backend/public/api/contact-me"
   form_action: "https://formspree.io/f/xzzjjnzb"

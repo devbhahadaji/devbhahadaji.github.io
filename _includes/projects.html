@@ -1,7 +1,9 @@
 <!-- Projects Section -->
-<section id="projects" class="projects">
+<section id="projects" class="projects" itemscope itemtype="https://schema.org/CollectionPage">
   <div class="container">
     <h2 class="section-title animate-on-scroll">Featured Projects</h2>
+    <meta itemprop="name" content="Projects by {{ site.name }}">
+    <meta itemprop="description" content="Portfolio of web development projects by {{ site.name }}, Full Stack Developer from Jaipur, Rajasthan">
 
     <!-- Project Filters -->
     <div class="project-filters animate-on-scroll">
@@ -20,7 +22,7 @@
     </div>
 
     <!-- Projects Grid -->
-    <div class="projects-grid">
+    <div class="projects-grid" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
       {% for project in site.data.projects %}
       {% assign tech_classes = "" %}
       {% for tech in project.technologies %}
@@ -30,10 +32,11 @@
       
       {% assign project_page = site.projects | where: "slug", project.slug | first %}
 
-      <div class="project-card animate-on-scroll" data-tech="{{ tech_classes }}">
+      <article class="project-card animate-on-scroll" data-tech="{{ tech_classes }}" itemprop="itemListElement" itemscope itemtype="https://schema.org/SoftwareApplication">
+        <meta itemprop="position" content="{{ forloop.index }}">
         <div class="project-image">
           {% if project.image %}
-          <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" loading="lazy">
+          <img src="{{ project.image | relative_url }}" alt="{{ project.title }} - Project by {{ site.name }}" loading="lazy" itemprop="image">
           {% else %}
           <div class="project-placeholder">
             <i class="fas fa-code"></i>
@@ -43,17 +46,17 @@
           <div class="project-overlay">
             <div class="project-links">
               {% if project_page %}
-              <a href="{{ project_page.url | relative_url }}" class="project-link" aria-label="View project details">
+              <a href="{{ project_page.url | relative_url }}" class="project-link" aria-label="View project details for {{ project.title }}">
                 <i class="fas fa-info-circle"></i>
               </a>
               {% endif %}
               {% if project.demo_url %}
-              <a href="{{ project.demo_url }}" target="_blank" class="project-link" aria-label="View live demo">
+              <a href="{{ project.demo_url }}" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View live demo of {{ project.title }}" itemprop="url">
                 <i class="fas fa-external-link-alt"></i>
               </a>
               {% endif %}
               {% if project.github_url %}
-              <a href="{{ project.github_url }}" target="_blank" class="project-link" aria-label="View source code">
+              <a href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View source code for {{ project.title }}">
                 <i class="fab fa-github"></i>
               </a>
               {% endif %}
@@ -61,12 +64,12 @@
           </div>
         </div>
         <div class="project-content">
-          <h3 class="project-title">{{ project.title }}</h3>
-          <p class="project-description">{{ project.description }}</p>
+          <h3 class="project-title" itemprop="name">{{ project.title }}</h3>
+          <p class="project-description" itemprop="description">{{ project.description }}</p>
           {% if project.technologies %}
           <div class="project-tech">
             {% for tech in project.technologies %}
-            <span class="tech-tag">{{ tech }}</span>
+            <span class="tech-tag" itemprop="applicationCategory">{{ tech }}</span>
             {% endfor %}
           </div>
           {% endif %}
@@ -78,7 +81,7 @@
               {% elsif project.status == "working on it" %}
               <i class="fas fa-spinner fa-spin"></i>
               {% endif %}
-              {{ project.status | capitalize }}
+            {{ project.status | capitalize }}
             </span>
             {% endif %}
             {% if project_page %}
@@ -88,13 +91,13 @@
             {% endif %}
           </div>
         </div>
-      </div>
+      </article>
       {% endfor %}
     </div>
 
     <!-- More Projects Link -->
     <div class="text-center" style="margin-top: 3rem;">
-      <a href="https://github.com/{{ site.social[0].url | split: '/' | last }}" target="_blank"
+      <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer"
         class="btn btn-secondary">
         <i class="fab fa-github"></i> View More on GitHub
       </a>

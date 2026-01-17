@@ -1,13 +1,15 @@
 <!-- About Section -->
-<section id="about" class="about">
+<section id="about" class="about" itemscope itemtype="https://schema.org/AboutPage">
   <div class="container">
     <h2 class="section-title animate-on-scroll">About Me</h2>
-    <div class="about-content">
+    <div class="about-content" itemprop="mainEntity" itemscope itemtype="https://schema.org/Person">
+      <meta itemprop="name" content="{{ site.name }}">
+      <meta itemprop="jobTitle" content="Full Stack Web Developer">
       <div class="about-text animate-on-scroll">
-        <p>{{ site.about.intro }}</p>
+        <p itemprop="description">{{ site.about.intro }}</p>
         <p>{{ site.about.details }}</p>
         {% if site.resume_url %}
-        <a href="{{ site.resume_url | relative_url }}" target="_blank" class="btn btn-primary">
+        <a href="{{ site.resume_url | relative_url }}" target="_blank" rel="noopener" class="btn btn-primary">
           <i class="fas fa-download"></i> Download Resume
         </a>
         {% endif %}
@@ -18,7 +20,7 @@
           <h3>{{ skill_category.category }}</h3>
           <div class="skill-tags">
             {% for skill in skill_category.items %}
-            <span class="skill-tag">{{ skill }}</span>
+            <span class="skill-tag" itemprop="knowsAbout">{{ skill }}</span>
             {% endfor %}
           </div>
         </div>

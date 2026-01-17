@@ -1,31 +1,34 @@
 <!-- Experience Section -->
-<section id="experience" class="experience">
+<section id="experience" class="experience" itemscope itemtype="https://schema.org/Person">
   <div class="container">
     <h2 class="section-title animate-on-scroll">Professional Experience</h2>
     <div class="timeline">
       {% for exp in site.experience %}
-      <div class="timeline-item animate-on-scroll">
+      <div class="timeline-item animate-on-scroll" itemscope itemtype="https://schema.org/WorkExperience">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
-          <h3 class="timeline-title">{{ exp.position }}</h3>
-          <h4 class="timeline-company">
-            {% if exp.company_url %}
-            <a href="{{ exp.company_url }}" target="_blank">{{ exp.company }}</a>
+          <h3 class="timeline-title" itemprop="jobTitle">{{ exp.position }}</h3>
+          <h4 class="timeline-company" itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+            {% if exp.company_url and exp.company_url != "" %}
+            <a href="{{ exp.company_url }}" target="_blank" rel="noopener noreferrer" itemprop="url">
+              <span itemprop="name">{{ exp.company }}</span>
+              <i class="fas fa-external-link-alt" style="font-size: 0.75em; margin-left: 5px;"></i>
+            </a>
             {% else %}
-            {{ exp.company }}
+            <span itemprop="name">{{ exp.company }}</span>
             {% endif %}
           </h4>
-          <span class="timeline-date">
+          <span class="timeline-date" itemprop="datePosted">
             <i class="fas fa-calendar-alt"></i>
             {{ exp.duration }}
           </span>
           {% if exp.location %}
-          <span class="timeline-location">
+          <span class="timeline-location" itemprop="jobLocation" itemscope itemtype="https://schema.org/Place">
             <i class="fas fa-map-marker-alt"></i>
-            {{ exp.location }}
+            <span itemprop="address">{{ exp.location }}</span>
           </span>
           {% endif %}
-          <p class="timeline-description">{{ exp.description }}</p>
+          <p class="timeline-description" itemprop="description">{{ exp.description }}</p>
           {% if exp.achievements %}
           <ul class="timeline-achievements">
             {% for achievement in exp.achievements %}
@@ -37,7 +40,7 @@
           <div class="timeline-tech">
             <strong>Technologies:</strong>
             {% for tech in exp.technologies %}
-            <span class="tech-tag">{{ tech }}</span>
+            <span class="tech-tag" itemprop="skills">{{ tech }}</span>
             {% endfor %}
           </div>
           {% endif %}

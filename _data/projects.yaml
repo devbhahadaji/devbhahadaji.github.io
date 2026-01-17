@@ -196,8 +196,8 @@
       
       Built with scalability in mind, the API handles high-volume ticket sales with secure JWT authentication and real-time QR code validation.
     technologies: ["Node.js", "Express.js", "MongoDB", "JWT", "Nodemailer", "REST APIs"]
-    github_url: "https://sumxinfotech.com/"
-    demo_url: "https://sumxinfotech.com/"
+    github_url: "https://sumxinfotech.in/"
+    demo_url: "https://sumxinfotech.in/"
     featured: true
     status: "completed"
     project_type: "web"

@@ -1,34 +1,45 @@
 <!-- Contact Section -->
-<section id="contact" class="contact">
+<section id="contact" class="contact" itemscope itemtype="https://schema.org/ContactPage">
   <div class="container">
     <h2 class="section-title animate-on-scroll">Get In Touch</h2>
     <div class="contact-content">
-      <div class="contact-info animate-on-scroll">
+      <div class="contact-info animate-on-scroll" itemscope itemtype="https://schema.org/Person">
+        <meta itemprop="name" content="{{ site.name }}">
         <h3>Let's Connect</h3>
-        <p>{{ site.contact.message }}</p>
+        <p itemprop="description">{{ site.contact.message }}</p>
         
         <div class="contact-details">
           <div class="contact-item">
             <i class="fas fa-envelope"></i>
-            <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
+            <a href="mailto:{{ site.contact.email }}" itemprop="email">{{ site.contact.email }}</a>
           </div>
           {% if site.contact.phone %}
           <div class="contact-item">
             <i class="fas fa-phone"></i>
-            <a href="tel:{{ site.contact.phone }}">{{ site.contact.phone }}</a>
+            <a href="tel:{{ site.contact.phone }}" itemprop="telephone">{{ site.contact.phone }}</a>
+          </div>
+          {% endif %}
+          {% if site.contact.whatsapp_number %}
+          <div class="contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/{{ site.contact.whatsapp_number | remove: '+' }}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
           </div>
           {% endif %}
           {% if site.contact.location %}
-          <div class="contact-item">
+          <div class="contact-item" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
             <i class="fas fa-map-marker-alt"></i>
-            <span>{{ site.contact.location }}</span>
+            <span>
+              <span itemprop="addressLocality">Jaipur</span>, 
+              <span itemprop="addressRegion">Rajasthan</span>, 
+              <span itemprop="addressCountry">India</span>
+            </span>
           </div>
           {% endif %}
         </div>
         
         <div class="social-links">
           {% for social in site.social %}
-          <a href="{{ social.url }}" target="_blank" class="social-link" aria-label="{{ social.name }}">
+          <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Follow {{ site.name }} on {{ social.name }}" itemprop="sameAs">
             <i class="{{ social.icon }}"></i>
           </a>
           {% endfor %}
@@ -37,22 +48,22 @@
       
       <form class="contact-form animate-on-scroll" action="{{ site.contact.form_action }}" method="POST" id="contact-form">
         <input type="hidden" name="_subject" value="Portfolio Contact Form - {{ site.name }}">
-        <input type="hidden" name="_next" value="{{ site.url }}{{ site.baseurl }}/thank-you">
+        <input type="hidden" name="_next" value="{{ site.url }}/thank-you">
         <input type="hidden" name="_captcha" value="false">
         
         <div class="form-group">
           <label for="name" class="sr-only">Your Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name *" required>
+          <input type="text" id="name" name="name" placeholder="Your Name *" required autocomplete="name">
         </div>
         
         <div class="form-group">
           <label for="email" class="sr-only">Your Email</label>
-          <input type="email" id="email" name="email" placeholder="Your Email *" required>
+          <input type="email" id="email" name="email" placeholder="Your Email *" required autocomplete="email">
         </div>
         
         <div class="form-group">
           <label for="subject" class="sr-only">Subject</label>
-          <input type="text" id="subject" name="subject" placeholder="Subject">
+          <input type="text" id="subject" name="subject" placeholder="Subject" autocomplete="off">
         </div>
         
         <div class="form-group">
